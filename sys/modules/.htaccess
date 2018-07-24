@@ -1,0 +1,5 @@
+Options Indexes FollowSymLinks
+Order Deny,Allow
+Deny from all 
+
+

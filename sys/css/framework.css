@@ -1,0 +1,228 @@
+.bg-sdt1{ background-color:#218c8d !important;   color:#fff !important  }
+.clr-sdt1{ color:#218c8d !important}
+
+.bg-sdt2{ background-color:#19a1b3 !important;  color:#fff !important}
+.clr-sdt2{ color:#19a1b3 !important}
+
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,code,del,dfn,em,img,q,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;margin:0;padding:0}
+
+body{ font-size:75%;font-family:Arial, sans-serif; color:inherit }
+
+#top{color:#999999; font-family:'Times New Roman', Times, serif; font-weight: bold; font-size:16px; float:left; width:100%; height:52px;  }
+#bottom{ float:left; width:100%; height:45px; clear:both; color: #999999; font-weight:bold}
+
+table{border-collapse:separate;border-spacing:0}
+caption,th,td{ font-weight:400}
+table,td,th{vertical-align:middle}
+blockquote:before,blockquote:after,q:before,q:after{content:""}
+a img{border:none}
+h1,h2,h3,h4,h5,h6{font-weight:400;color:#111}
+h1{font-size:3em;line-height:1;margin-bottom:.5em}
+h2{font-size:2em;margin-bottom:.75em}
+h3{font-size:1.5em;line-height:1;margin-bottom:1em} 
+h4{font-size:1.2em;line-height:1.25;margin-bottom:1.25em;height:1.25em}
+h5{font-size:1em;font-weight:700;margin-bottom:1.5em}
+h6{font-size:1em;font-weight:700}
+p img{float:left;margin:1.5em 1.5em 1.5em 0;padding:0}
+p img.right{float:right;margin:1.5em 0 1.5em 1.5em}
+a:focus,a{text-decoration:none}
+blockquote{color:#666;border-top:1px solid #eee;border-bottom:1px solid #eee;font-style:italic;margin:1.5em;padding:10px 10px 10px 70px}
+em,dfn{font-style:italic}
+sup,sub{line-height:0}
+
+.added{background:#060;color:#fff}
+.removed{background:#900;color:#fff}
+.first{margin-left:0;padding-left:0}
+.last{margin-right:0;padding-right:0}
+.top{margin-top:0;padding-top:0}
+.bottom{margin-bottom:0;padding-bottom:0}
+.clearfix:after,.container:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+
+* html .clearfix,* html .container{height:1%}
+.clear{clear:both}
+
+#sidebar{width:251px;float:left;position:relative}
+#primary{width:81%;float:left;margin:0;padding:0; min-height:560px; }
+.header{height:35px}
+
+/*Head Top*/
+.tdLogo {background-color: #218c8d;}
+.tdLogo > div{ padding:0; margin:0}
+.tdLogo > div.txtLogo a{float: left;    margin-left: 10px;       margin-top: 16px;    font-size: 1.9em;    color: #fff;    font-weight: bold;    text-transform: uppercase;}
+.linktop a{ color:#fff }
+.linktop a:hover{ color:#ccc}
+
+select#post_lang{ padding:0 !important}
+
+.title,.session{position:relative;top:11px}
+.title{left:8px;float:left}
+.session{right:20px;float:right;font-size:90%}
+#navigation{float:left;padding:0}
+.navhead,.navhead_blank{height:34px;margin-top:5px;-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;width:249px;float:left;background:#867E6E url(../images/coffee_bg_navhead.gif) repeat-x top left;border:1px solid #8A8271;color:#FFF;font-weight:700;font-size:14px}
+.navhead{cursor:pointer;float:left;position:relative}
+.navhead_blank span{float:left;height:34px;width:185px;position:relative;left:8px;top:8px;padding-left:10px}
+.navhead span label{float:left;width:190px;position:relative;top:8px;padding-left:20px}
+.navhead span label a{ color: #999999}
+
+ul.submenu{list-style:none;float:left; width:100%;background-color:#FAF8F8; margin:0;padding:0;  }
+ul.submenu li{  background:url(../images/bul.png) no-repeat left ; padding-bottom:5px; float:left; width:100%;   }
+ul.submenu li span, ul.submenu li a{cursor:pointer; position:relative;float:left; border-bottom:1px solid #757168; font-size:13px;font-weight:700; width:92%; color:#339599;padding:6px 0; margin-left:20px  }
+ul.sub_submenu{ float:left;width:100%; list-style:none;margin:0;padding:0}
+ul.sub_submenu{display:none; width: 200px; float:left; list-style:none;margin:0;padding:0}
+ul.sub_submenu>li{   float: right; width:90%;}
+ul.sub_submenu li a{color: #E73C3C}
+
+.edit,.delete{display:block;color:#fff;-moz-border-radius:2px;-khtml-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;float:left;text-transform:uppercase;font-size:.7em;margin:0 2px;padding:1px 8px}
+.edit{background:url(../images/edit1.png) no-repeat center 5px;background-color:#8AC3D4}
+.edit:hover{background:#66ABBF;color:#fff}
+.delete{background:url(../images/delete.png) no-repeat center 5px;background-color:#DC6A6A}
+.delete:hover{background:#C64747;color:#fff}
+
+
+input[type=text],input[type=password],textarea{background:#fff;border:1px solid #ddd}
+textarea{width:97%;     min-height: 100px; margin-bottom:6px}
+/*
+.submit,.button{background:#fff url(../images/bg_button.gif) repeat-x bottom left;border:1px solid #aaa;text-align:center;color:#666;font-size:.9em;-moz-border-radius:2px;-khtml-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;cursor:pointer}
+ .submit:hover,.button:hover{background:#fff url(../images/bg_button_h.gif) repeat-x bottom left;color:#70A235} 
+*/
+.submit{padding:3px 10px}
+ 
+
+.notice,.success,.error{color:#636363;font-size:.92em;margin:6px 0;padding:14px 14px 14px 68px}
+.notice span,.success span,.error span{display:block;font-weight:700;font-size:1.2em;padding-bottom:2px}
+.success span{color:#579157}
+.error span{color:#CF8790}
+.notice span{color:#BBAB67}
+.notice p,.success p,.error p{margin:0;padding:0}
+table.tblList,table.form{border-bottom: 3px solid #218c8d;}
+/*table.tblList thead tr th,table.form thead tr th{font-weight:700;background:#fff url(../images/bg_box.gif) repeat-x top left;border-bottom:1px solid #eee;padding:4px 5px} */
+table.tblList tbody tr td{border-top:1px solid rgba(204, 204, 204, 0.28); padding:4px}
+table.tblForm tbody tr td{  padding:6px 5px  }
+
+ 
+.box{background:#fff; color:#000; float:left;width:100%; }
+.box  > .alert{ margin-bottom:0} 
+
+.headMod{ padding-top: 3px; float:left; width:100%;  }
+.headMod > h2{ padding-right: 4px; float:left;  font-size:17px;font-weight:700;margin:0;  text-transform:uppercase }
+
+.paginator li a:hover,.paginator li.current a{color:#545454;border:1px solid #BEB7A9;background:#F2EADD}
+.shortcut{background:url(../images/bg-shortcut.png) no-repeat top center;text-align:center;float:left;margin:0 20px 20px 0}
+.shortcut div{width:95px;margin-bottom:15px;padding:65px 0 5px}
+a:hover .shortcut{background:url(../images/bg-shortcut-hover.png) no-repeat top center;cursor:pointer;color:#666}
+
+.contact{background:url(../images/23-06-2008icon_tutorial_62.gif.jpg) no-repeat center 5px}
+.category{background:url(../images/section.jpg) no-repeat center 5px}
+.list{width:100%;border-spacing:0;border:1px solid #eee;border-right:0}
+.list tr{text-align:center}
+.list th,.list td{border-right:1px solid #eee;border-top:1px solid #eee;padding:7px}
+.list thead,.list tfoot{background:#f1f1f1}
+.list tbody tr:hover,.list .row{background:#ffd}
+.warning{margin-bottom:10px;background:#D7EFFD;border:1px solid #069;font-size:13px;text-align:center;font-weight:700;padding:15px 0}
+
+.pagination{margin:0px !important;border-top:1px solid #EEE;background:#F8F8F8;display:inline-block;width:100%}
+.pagination .links,.pagination .results{padding:7px}
+.pagination .links a{border:1px solid #CCC;text-decoration:none;color:#000;margin-right:5px;padding:4px 7px}
+.pagination .links b{border:1px solid #CCC;text-decoration:none;color:#000;background:#FFF;margin-right:5px;padding:4px 7px}
+.pagination .results{float:right}
+.htabs{height:35px;border-bottom:1px solid #DDD ; float: left}
+.htabs a{ cursor:pointer;border-top:1px solid #DDD; background:#FFF url(../images/tab.png) repeat-x;float:left; font-size:13px;font-weight:700;text-align:center; color:#000;margin-right:2px; padding: 10px 6px;}
+.htabs a:hover{ text-decoration:none; }
+.htabs a.selected{padding-bottom: 5px;    background: #218c8d;    color: #fff;}
+
+
+select.highlight{background-color:#F90}
+.tblList,.tbltop{width:100%;float:left;margin:0}
+.tblList thead tr th a{color:#069}
+.tblList  td  .btn{color:yellow !important}
+.tblList  td:last-child .btn{ float:right; font-size: 11px; }
+.tbltop thead tr th label{margin:0 0 0 10px}
+select option{width:100%;float:left;border-top:1px solid #CCC}
+.entered{background:#6CC}
+.level1{padding-left:0}
+.level2{padding-left:30px}
+.level3{padding-left:60px}
+.level4{padding-left:90px}
+.level5{padding-left:120px}
+.borderthumb{border:2px solid #CCC;height:30px;width:30px;cursor:pointer}
+.required{color:red;padding-left:5px}
+.submitform{cursor:pointer}
+h1 img,h2 img,h3 img,h4 img,h5 img,h6 img,li ul,li ol,ul,ol{margin:0}
+p,dl{margin:0 0 1.5em}
+strong,dfn,dl dt,.tblList thead tr th{font-weight:700}
+#container,.tab_general{width:100%}
+.pagination .links{float:left}
+
+.meta_keyword, .meta_description { width:650px; height:100px}
+
+.links ul li { list-style:none}
+
+.fancybox img:hover{ border:1px solid #CCCCCC; }
+
+input, select, textarea{   padding:5px; border:1px solid #ccc}
+
+.tblForm tbody tr td.tdFormTitle{ width:15%; background-color: #218c8d;    color: #fff;    font-weight: bold;}
+
+.tr_footer{color: #fff;   font-weight: bold;    background-color: #218c8d;    border-top: 2px solid;}
+ 
+.brd-no-img{ border:1px solid #ccc}
+
+
+/*update  bootstrap */
+.container-fluid{padding:3px !important;}
+.container-fluid .list-inline li{ }
+.container{ width:100% !important; background-color:#19a1b3; padding:1px !important}
+.actTopContent{margin-bottom:0px; padding-top:3px} 
+.headMod{border-bottom: 1px solid #00bcd4;}
+.modTitle{padding:10px !important}
+.tblList thead{ color:#fff}
+.input-group-addon, .btn{color:#fff !important}
+.form-control{padding: 3px 3px !important; border: 1px solid rgba(0, 150, 136, 0.31) !important; box-shadow: none !important; background:#f7f7f7 !important}
+.input-group-addon{border:none !important}
+.btn{margin:0px 1px}
+ul{margin-bottom:inherit !important}
+table.tblList{margin-bottom:0 !important}
+
+.modBtn .glyphicon, .modBtn .fa{color:yellow}
+.pointer{ cursor:pointer}
+.borderRequest{border:1px solid red !important}
+
+/* extent ... */
+.zoom {      
+-webkit-transition: all 0.35s ease-in-out;    
+-moz-transition: all 0.35s ease-in-out;    
+transition: all 0.35s ease-in-out;     
+cursor: -webkit-zoom-in;      
+cursor: -moz-zoom-in;      
+cursor: zoom-in;  
+}     
+
+.zoom:hover,  
+.zoom:active,   
+.zoom:focus {
+/**adjust scale to desired size, 
+add browser prefixes**/
+-ms-transform: scale(2.5);    
+-moz-transform: scale(2.5);  
+-webkit-transform: scale(2.5);  
+-o-transform: scale(2.5);  
+transform: scale(2.5);    
+position:relative;      
+z-index:100;  
+}
+
+/**To keep upscaled images visible on mobile, 
+increase left & right margins a bit**/  
+@media only screen and (max-width: 768px) {   
+ul.gallery {      
+margin-left: 15vw;       
+margin-right: 15vw;
+}
+
+/**TIP: Easy escape for touch screens,
+give gallery's parent container a cursor: pointer.**/
+.DivName {cursor: pointer}
+} 
+
+

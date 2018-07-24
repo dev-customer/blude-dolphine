@@ -1,0 +1,106 @@
+#primary_nav_wrap
+{
+	 border-top: 1px solid rgba(0, 188, 212, 0.36);
+	 border-bottom: 1px solid rgba(0, 188, 212, 0.36);
+}
+
+.menuMain
+{
+	list-style:none;
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0;
+}
+ 
+.menuMain
+{
+	text-transform:capitalize;
+	z-index:999;
+}
+.menuMain > li > ul >li a
+{
+	display:block;
+	text-decoration:none;
+	font-weight:700;
+	font-size:12px;
+	line-height:32px; 
+	font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+	color:#fff;
+}
+
+.menuMain li
+{
+	position:relative;
+	float:left;
+	margin:0;
+	padding:3px;
+	padding-left:10px; 
+	padding-right:10px;
+	background-color:#146a6b; 
+    border-right: 1px solid #19a1b3;	
+	padding-top:10px;
+	padding-bottom:10px;
+		
+}
+.menuMain li span, .menuMain  li a
+{
+	color:#eee; 
+	float: left;
+    margin-right: 7px;
+	text-transform: uppercase;
+}
+.menuMain  li a
+{
+	margin-top: -3px;
+}
+
+.menuMain li ul li a
+{
+	margin-top:-8px
+}
+
+.menuMain li.current-menu-item
+{
+	background:#ddd
+}
+
+.menuMain li:hover
+{
+	background-color:#218c8d 
+}
+
+.menuMain ul
+{
+	display:none;
+	position:absolute;
+	top:100%;
+	left:0;
+	padding:0;
+	/* box-shadow: 1px 5px 10px #ccc; */
+}
+
+.menuMain ul li
+{
+	float: left;
+	width:100%;
+	border-bottom:1px solid rgba(0, 188, 212, 0.36); 
+	padding-bottom:10px;
+	padding-left: 3px;
+}
+
+.menuMain ul a
+{
+	line-height:120%;
+}
+
+.menuMain ul ul
+{
+	top:0;
+	left:100%
+}
+
+.menuMain li:hover > ul
+{
+	display:block
+}

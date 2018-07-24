@@ -1,0 +1,42 @@
+/* CSS Document */
+#basic-modal-content  .modal-footer {border-top: 1px solid #DDD;}
+#basic-modal-content .modal-footer{background: #fff;}
+#basic-modal-content table tr td{border-top:0; }
+#basic-modal-content{background-color:#fff; color: #0e0e0f;}
+#basic-modal-content .modal-header button.close a {position: absolute;top: -25px;right: -28px;line-height: 0px;text-align: center;border-radius:50%;}
+#basic-modal-content .modal-header button.close,#basic-modal-content .modal-header button.close:hover{opacity: 1;background-color: #fff;
+    border: none;}
+#basic-modal-content .modal-header button.close a:before{content:url('//hstatic.net/244/1000030244/10/2016/5-31/delete.png');}
+#basic-modal-content .modal-content {box-shadow: none;-webkit-box-shadow: none;border: none;background: none;}
+#basic-modal-content .modal-body{background: #fff;padding: 0;}
+#basic-modal-content .modal-body .modal-title{padding: 15px;}
+#basic-modal-content .modal-body .modal-title i{font-size: 12px;margin-left: 15px;}
+.icon-cart{margin-right: 15px;vertical-align: top;}
+#basic-modal-content .modal-body #cart-table .cart-table-header{background: #f8f8f8;}
+#basic-modal-content .modal-body #cart-table .cart-table-header th:first-child,#basic-modal-content .modal-body #cart-table .line-item .item-image{padding-left: 15px;}
+#basic-modal-content .modal-body #cart-table .cart-table-header th:last-child{border-right: none;}
+#basic-modal-content .modal-body #cart-table .cart-table-header th{ padding: 10px 0;border-right: 1px solid #fff;}
+#basic-modal-content .modal-body #cart-table .line-item td{padding-bottom: 10px;padding-top: 10px;vertical-align: top;}
+#basic-modal-content .modal-body #cart-table .line-item {border-bottom: 1px solid #ccc;}
+#cart-table > tbody > tr.line-item.original {display: none;}
+.item-total {color: #ff7200;font-size: 20px;font-weight: 600;}
+.price-vat{color: #c2c2c2;}
+.item-quantity input{max-width: 60px;text-align: center;}
+
+#update-cart-modal, #modal-checkout-button-cart-modal, #modal-checkout-button {
+    padding: 10px 30px;
+    background: #ff7200;
+    color: #fff;
+    border: none;
+    box-shadow: none;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    float: right;
+    margin-top: 10px;
+}
+
+.comeback a, .comeback a:hover {
+    color: #07b0ef!important;
+    font-size: 16px;
+    text-transform: uppercase;}

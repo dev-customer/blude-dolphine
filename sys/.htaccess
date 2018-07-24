@@ -1,0 +1,13 @@
+#Do not browse sub-folder
+Options Indexes FollowSymLinks
+Order Deny,Allow
+
+
+#rewrite one
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-s
+RewriteRule ^(.*)$ index.php?p=$1 [L]
+
+#Options All -Indexes

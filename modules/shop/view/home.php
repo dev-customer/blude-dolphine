@@ -265,49 +265,113 @@ global $json, $mod, $cNews, $cShop;
 			$clink = LINK_SHOP_LIST.$value[4].'.html';
 			?> 
 			
-				<div class="col-md-6 panel clearfix"> 
-					<div class="panel-heading clearfix" style="">
+				<div class="col-md-6 col-xs-6 panel clearfix"> 
+					<!-- <div class="panel-heading clearfix" style="">
 						<h4 class="col-md-12" style="padding:5px 0; margin-bottom:0"><span class="" style="padding: 5px 10px;">							
 							<a class="clr-sdt1" href="<?=$clink?>" target="_blank"><?=$value[1]?></a></span>
 						</h4>
-					</div> 
+					</div>  -->
 					<div class="contet-block">
-						<div class="col-md-4 p-category-home" style="padding:0">
-							<a href="<?=$clink?>" target="_blank">
-							<?=
-							showImg(DIR_UPLOAD.'/shop/'.$value[6], 'shop/'.$value[6], 'no-image.png', '', '', "", "", '', '  style="max-width:90%;"');
-							?>							
-							</a>
+						<div class="col-md-4 col-xs-3 p-category-home" style="padding:0">
+							<div class="warrap-category-left">
+								<a href="<?=$clink?>" target="_blank">
+									<div class="title item item-a-hover"><?=$value[1]?></div>
+									<div class="sub-title item item-a-hover">Size M</div>
+									<?=
+									showImg(DIR_UPLOAD.'/shop/'.$value[6], 'shop/'.$value[6], 'no-image.png', '', '', "", "", '', '');
+									?>
+									<div class="tagContainer">
+										<div class="tag">Giày Nam</div>
+										<div class="tag">Thời Trang</div>
+									</div>
+
+								</a>
+								
+							</div>
 						</div> 
-						<div class="col-md-8 content-block-grid" style="padding-top:25px; padding-right: 10px; padding-left: 10px;">
-							<?php   
-							$sqlExt = ' AND p.publish = 1 AND p.id_cat IN ('.implode(',', $cListS).')'; 
-							if($_POST['sLocation'] != '')
-							{ 
-								$sqlExt .= " AND p.jsLocationGroup LIKE '%".$_POST['sLocation']."%'";	 
-							} 				
-							$rows = loadListShop('', $sqlExt, '', 3)['rows'];  
-							foreach($rows as $key => $row):   
-								$link  = LINK_SHOP_ITEM.$row['alias'].'.html';
-								$title = $json->getDataJson1D($row['title'], $_SESSION['dirlang']);  
-								$price2 = discountPrice($row['price'], $row['discount']);
-								?>
-								<div class="col-md-4 content-block-grid" style="padding-left:5px; padding-right:5px;"> 
-									<!--<span class="glyphicon glyphicon-certificate icoSpec <?=$row['discount'] > 0 ? '' : 'hidden'?> icoSaleOff text-right" title="<?=$row['discount']?>"><label><?=$row['discount']?>%</label></span>-->
-									<div class="clearfix item-product" style="">
-										<div class="col-xs-4 col-md-12 text-center list-product-home" style="padding:0px;">
-											<a href="<?=$link?>" class="img-class " target="_blank"> 						
-												<?=
-												showImg(DIR_UPLOAD.'/shop/'.$row['image'], 'shop/'.$row['image'], 'no-image.png', '', '', "", "", '', ' style="height:100px;"');
-												?> 
-											</a>  
+						<div class="col-md-8 col-xs-9 content-block-grid pannel-item" style="padding-top:20px;">
+							<div class="row pannel-item-top">
+								<?php   
+								$sqlExt = ' AND p.publish = 1 AND p.id_cat IN ('.implode(',', $cListS).')'; 
+								if($_POST['sLocation'] != '')
+								{ 
+									$sqlExt .= " AND p.jsLocationGroup LIKE '%".$_POST['sLocation']."%'";	 
+								} 				
+								$rows = loadListShop('', $sqlExt, '', 3)['rows']; 
+
+								foreach($rows as $key => $row):   
+									$link  = LINK_SHOP_ITEM.$row['alias'].'.html';
+									$title = $json->getDataJson1D($row['title'], $_SESSION['dirlang']);  
+									$price2 = discountPrice($row['price'], $row['discount']);
+									?>
+
+									<!-- here -->
+									
+								<?php	
+								endforeach; 
+								?> 
+									<div class="col-lg-4 col-md-6 col-xs-6 content-block-grid" style="padding-left:5px; padding-right:5px;"> 
+										<!--<span class="glyphicon glyphicon-certificate icoSpec <?=$row['discount'] > 0 ? '' : 'hidden'?> icoSaleOff text-right" title="<?=$row['discount']?>"><label><?=$row['discount']?>%</label></span>-->
+										<div class="clearfix item-product row" style="">
+											<div class="col-xs-12 col-md-12 text-center list-product-home" style="padding:0px;">
+												<div class="warrap-item-top">
+													<a href="<?=$link?>" class="img-class " target="_blank"> 			<div class="title item item-a-hover">Titlte 1</div>
+														<div class="sub-title item item-a-hover">Sub title</div>
+														<!-- <?=
+															showImg(DIR_UPLOAD.'/shop/'.$row['image'], 'shop/'.$row['image'], 'no-image.png', '', '', "", "", '', ' style="height:100px;"');
+														?>  -->
+														<img src="https://img.alicdn.com/tfs/TB1NeF.yntYBeNjy1XdXXXXyVXa-210-260.png">
+													</a>  
+													
+												</div>
+											</div>
+											
 										</div>
-										<div class="col-xs-8 col-md-12 caption text-center" style="padding:0">
-											<h5 class="content-block-short-title" style="min-height:10px"><a class="text-uppercase" style="font-size: 10px;" href="<?=$link?>" target="_blank"><?=$title?></a></h5>
+									</div>
+									<div class="col-lg-4 col-md-6 col-xs-6 content-block-grid" style="padding-left:5px; padding-right:5px;"> 
+										<!--<span class="glyphicon glyphicon-certificate icoSpec <?=$row['discount'] > 0 ? '' : 'hidden'?> icoSaleOff text-right" title="<?=$row['discount']?>"><label><?=$row['discount']?>%</label></span>-->
+										<div class="clearfix item-product row" style="">
+											<div class="col-xs-12 col-md-12 text-center list-product-home" style="padding:0px;">
+												<div class="warrap-item-top">
+													<a href="<?=$link?>" class="img-class " target="_blank"> 			<div class="title item item-a-hover">Titlte 1</div>
+														<div class="sub-title item item-a-hover">Sub title</div>
+														<!-- <?=
+															showImg(DIR_UPLOAD.'/shop/'.$row['image'], 'shop/'.$row['image'], 'no-image.png', '', '', "", "", '', ' style="height:100px;"');
+														?>  -->
+														<img src="https://img.alicdn.com/tfs/TB15dxkxAyWBuNjy0FpXXassXXa-210-260.png">
+													</a>  
+													
+												</div>
+											</div>
+										</div>
+									</div> 
+									<div class="col-lg-4 col-md-6 col-xs-6 content-block-grid" style="padding-left:5px; padding-right:5px;"> 
+										<!--<span class="glyphicon glyphicon-certificate icoSpec <?=$row['discount'] > 0 ? '' : 'hidden'?> icoSaleOff text-right" title="<?=$row['discount']?>"><label><?=$row['discount']?>%</label></span>-->
+										<div class="clearfix item-product row" style="">
+											<div class="col-xs-12 col-md-12 text-center list-product-home" style="padding:0px;">
+												<div class="warrap-item-top">
+													<a href="<?=$link?>" class="img-class " target="_blank"> 			<div class="title item item-a-hover">Titlte 1</div>
+														<div class="sub-title item item-a-hover">Sub title</div>
+														<?=
+															showImg(DIR_UPLOAD.'/shop/'.$row['image'], 'shop/'.$row['image'], 'no-image.png', '', '', "", "", '', ' style="height:136px;"');
+														?>
+														<!-- <img src="https://img.alicdn.com/tfs/TB1trVyxuuSBuNjy1XcXXcYjFXa-210-260.png"> -->
+													</a>  
+													
+												</div>
+											</div>
+										</div>
+									</div> 
+							</div>
+
+							<div class="col-xs-12 pannel-item-bottom">
+								<div class="warrap-item-bottom">
+									<!-- <div class="col-xs-8 col-md-12 caption text-center" style="padding:0"> -->
+											<!-- <h5 class="content-block-short-title" style="min-height:10px"><a class="text-uppercase" style="font-size: 10px;" href="<?=$link?>" target="_blank"><?=$title?></a></h5>
 											<?php
 											if($row['discount']>0){?>
 												<div class="clearfix">
-													<!--<del class="col-md-6 text-right" style="padding:0"><span class="priceFormat discountPrice"><?=$row['price']?></span></del> -->
+													<del class="col-md-6 text-right" style="padding:0"><span class="priceFormat discountPrice"><?=$row['price']?></span></del> 
 													<span class="priceFormat2" style=""><?=$price2?> VNĐ</span>
 												</div> 
 											<?php	
@@ -317,19 +381,25 @@ global $json, $mod, $cNews, $cShop;
 												</div> 
 											<?php	
 											}
-											?>  
-											<!--
-											<p class="btn-home bg-sdt1 ">
-												<a class="btn btn-addcart " style="color:#fff" href="<?=$link?>"><?=BTN_ADDCARD?></a>									
-											</p>
-											-->
-										</div>
-									</div>
-								</div> 
-							<?php	
-							endforeach; 
-							?> 
-							
+											?>  -->
+
+
+										<!--
+										<p class="btn-home bg-sdt1 ">
+											<a class="btn btn-addcart " style="color:#fff" href="<?=$link?>"><?=BTN_ADDCARD?></a>									
+										</p>
+										-->
+										<!-- </div> -->
+									<div class="item-tag"><a class="item-a-hover" href="<?=$clink?>" target="_blank">TAG 1</a></div>
+									<div class="item-tag"><a class="item-a-hover" href="<?=$clink?>" target="_blank">TAG 2</a></div>
+									<div class="item-tag"><a class="item-a-hover" href="<?=$clink?>" target="_blank">TAG 3</a></div>
+									<div class="item-tag"><a class="item-a-hover" href="<?=$clink?>" target="_blank">TAG 4</a></div>
+									<div class="item-tag"><a class="item-a-hover" href="<?=$clink?>" target="_blank">TAG 5</a></div>
+									<div class="item-tag"><a class="item-a-hover" href="<?=$clink?>" target="_blank">TAG 6</a></div>
+									<div class="item-tag"><a class="item-a-hover" href="<?=$clink?>" target="_blank">TAG 7</a></div>
+									<div class="item-tag"><a class="item-a-hover" href="<?=$clink?>" target="_blank">TAG 8</a></div>
+								</div>
+							</div>
 						</div>					
 					</div>
 				</div>			

@@ -316,6 +316,58 @@ a{ color:#000}
 .mfp-arrow-right:before{border-left: 27px solid #FFC107 !important}
 .mfp-arrow-left:before{border-right: 27px solid #FFC107 !important}
 	
+	/*Thinhpm task 3*/
+.group-pannel{
+	border-color: rgb(228, 228, 228);
+	border-radius: 0;
+}
+.group-pannel .group-product .warrap-item{
+	border :none;
+	box-shadow: none;
+	margin-bottom: 10px;
+	margin-top: 15px;
+}
+.group-pannel .group-product .warrap-item .thumbnail a:hover img{
+	-webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.group-pannel .group-product .warrap-item .thumbnail img{
+	height: 200px;
+	-webkit-transition: -webkit-transform .3s .1s;
+    -moz-transition: -moz-transform .3s .1s;
+    -o-transition: -o-transform .3s .1s;
+    transition: -webkit-transform .3s .1s,-moz-transform .3s .1s,-o-transform .3s .1s,transform .3s .1s;
+}
+.group-pannel .group-product .warrap-item .title-main{
+	-webkit-transition: color .3s;
+    -moz-transition: color .3s;
+    -o-transition: color .3s;
+    transition: color .3s;
+}
+.group-pannel .group-product .warrap-item .title-main:hover{
+	color: #249EC5;
+	text-decoration: none;
+}
+.group-pannel .group-product .warrap-item .caption-top{
+	height: 36px;
+	overflow: hidden;
+	margin-bottom: 14px;
+	text-align: left;
+}
+.group-pannel .group-product .warrap-item .caption-bottom{
+	font-size: 13px;
+	text-align: left;
+}
+.group-pannel .group-product .warrap-item .caption-bottom .priceFormat{
+	color: #222 !important;
+
+}
+
+	/*End thinhpm task 3*/
 @media only screen and (min-width: 768px) {	
 	.navbar{ min-height:inherit}
 	.caption h5 {

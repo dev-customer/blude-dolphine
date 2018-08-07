@@ -315,7 +315,21 @@ a{ color:#000}
 .mfp-close{ background: #f58220 !important; width: 45px !important; text-align: center !important; color: #fff !important;	}
 .mfp-arrow-right:before{border-left: 27px solid #FFC107 !important}
 .mfp-arrow-left:before{border-right: 27px solid #FFC107 !important}
-	
+
+/*Thinhpm css category homepage*/
+.list-group-item{
+	position: initial !important;
+}
+.category-home-left{
+	position: relative;
+}
+.home-show-item-category{
+	position: absolute;
+	top: 0;
+	margin-top: 0 !important;
+	width: 670px;
+}
+
 @media only screen and (min-width: 768px) {	
 	.navbar{ min-height:inherit}
 	.caption h5 {

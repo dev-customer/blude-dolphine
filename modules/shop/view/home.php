@@ -5,8 +5,8 @@ global $json, $mod, $cNews, $cShop;
 
 <div class="container-fluid side-slide head-home">
 	<div class="container"> 
-		<div class="col-md-2 hidden-mobile" style="padding-left:0"> 
-			<ul class="list-group category-home">
+		<div class="col-md-2 col-xs-3 hidden-mobile" style="padding-left:0"> 
+			<ul class="list-group category-home category-home-left">
 				<!--
 				<li class="list-group-item">
 					<h5><a href="<?=BASE_NAME?>sale-off.html"> 
@@ -26,14 +26,14 @@ global $json, $mod, $cNews, $cShop;
 						<li class="list-group-item dropdown-submenu">
 							<h5><a href="<?=$link1?>">					
 							<?=$title1?></a></h5>
-							<div class="dropdown-menu " style="z-index: 99999999;"> 
+							<div class="dropdown-menu home-show-item-category" style="z-index: 99999999;"> 
 								<?php
 								foreach($cShopSub as $row2):
 									if($row2[5] == $row1[0]):
 										$link2  =  LINK_SHOP_LIST.$row2[4].'.html'; 
 										$title2 = $row2[1];
 										?>
-										<div class="col-md-3 panel">
+										<div class="col-md-3 col-xs-3 panel">
 											<div class="">
 												<h5 class="panel-title"><a href="<?=$link2?>"><?=$title2?></a></h5>
 											</div>
@@ -69,7 +69,7 @@ global $json, $mod, $cNews, $cShop;
 				endforeach; ?> 
 			</ul> 	
 		</div>
-		<div class="col-md-7" style="z-index: 2;">
+		<div class="col-md-7 col-xs-12" style="z-index: 2;">
 			<div id="carousel-example-generic1" class="carousel slide carousel-fade" style="padding-top:0">			 
 				<div class="carousel-inner" role="listbox">
 					<?php 
@@ -92,7 +92,7 @@ global $json, $mod, $cNews, $cShop;
 				</ol> 	 
 			</div>	
 		</div>
-		<div class="col-md-3 block-member">				
+		<div class="col-md-3 col-xs-12 block-member">				
 				<?php
 				if(empty($_SESSION['id_user_frontend'])){ ?>
 					<!--

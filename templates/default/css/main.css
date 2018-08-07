@@ -440,6 +440,21 @@ a{ color:#000}
 }
 
 /* End Thinhpm task 2 fix css item category homepage*/
+
+/*Thinhpm css category homepage*/
+.list-group-item{
+	position: initial !important;
+}
+.category-home-left{
+	position: relative;
+}
+.home-show-item-category{
+	position: absolute;
+	top: 0;
+	margin-top: 0 !important;
+	width: 670px;
+}
+
 @media only screen and (min-width: 768px) {	
 	.navbar{ min-height:inherit}
 	.caption h5 {

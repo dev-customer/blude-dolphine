@@ -198,7 +198,7 @@ a:focus, a:hover{ color: inherit}
 	.category-home > .list-group-item{padding:3px; border-radius:0}
 	.category-home > .list-group-item > h5{margin:3px auto; text-transform: uppercase; font-size: 13px;}
 	.category-home > .list-group-item > h5 img{ height:20px; width:20px}
-	.category-home > .list-group-item .dropdown-menu{border: 1px solid #ccc; width:400px; height:350px;  margin-left: 1px;}
+	.category-home > .list-group-item .dropdown-menu{border: 1px solid #ccc; width:678px; height:331px;  margin-left: 1px; overflow: hidden;}
 	.category-home > .list-group-item .dropdown-menu .col-md-3{padding: 5px;}
 	.category-home > .list-group-item .dropdown-menu .panel-title{color:<?=$mod->config['colorMain1']?>;     min-height: 30px; font-weight:bold; text-transform: uppercase; font-size: 14px; margin-bottom: 5px;}
 	.category-home > .list-group-item .dropdown-menu .list-group-item{ padding: 5px;   padding-left:0;  font-size:12px  }

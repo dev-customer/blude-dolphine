@@ -315,6 +315,131 @@ a{ color:#000}
 .mfp-close{ background: #f58220 !important; width: 45px !important; text-align: center !important; color: #fff !important;	}
 .mfp-arrow-right:before{border-left: 27px solid #FFC107 !important}
 .mfp-arrow-left:before{border-right: 27px solid #FFC107 !important}
+	
+/*Thinhpm task 2 fix css item category homepage*/
+.panel{
+	margin-bottom: 10px;
+}
+.p-category-home{
+	height: 344px;
+	border-right: 1px solid #ededed;
+	min-width: 190px;
+}
+.p-category-home .warrap-category-left a{
+	position: relative;
+	display: block;
+	padding: 15px 0 0 20px;
+}
+.p-category-home .warrap-category-left a:hover{
+	text-decoration: unset;
+}
+.p-category-home .warrap-category-left a img{
+	position: relative;
+    top: 0;
+    left: 0;
+    transform: unset;
+    display: block;
+    width: 156px;
+    height: 220px;
+    margin-top: 16px;
+    transition: transform .3s;
+}
+.p-category-home .warrap-category-left a img:hover{
+	transform: scale(1.05);
+}
+.contet-block .item-a-hover:hover{
+	color: #249EC5 !important;
+	
+}
+.p-category-home .warrap-category-left .title{
+	font-size: 18px;
+	font-weight: bold;
+	height: 25px;
+	overflow: hidden;
+}
+.p-category-home .warrap-category-left .sub-title{
+	font-size: 12px;
+    color: #888;
+}
+.p-category-home .warrap-category-left .tagContainer{
+	margin-top: 9px;
+}
+.p-category-home .warrap-category-left .tagContainer .tag{
+	float: left;
+    width: 73px;
+    height: 23px;
+    line-height: 23px;
+    text-align: center;
+    color: #fff;
+    margin-right: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    background-color: #249EC5;
+}
+
+.warrap-item-top .img-class img{
+	position: relative;
+    top: 0;
+    left: 0;
+    transform: unset;
+    display: block;
+    width: 105px;
+    height: 136px;
+    transition: transform .3s;
+    margin: 0 auto;
+    margin-top: 17px;
+}
+.warrap-item-top .img-class img:hover{
+	transform: scale(1.05);
+}
+.contet-block a:hover{
+	text-decoration: unset;
+}
+.list-product-home{
+	height: unset;
+}
+
+.warrap-item-top .img-class .title{
+	text-transform: uppercase;
+}
+
+.warrap-item-top .img-class .sub-title{
+	font-size: 12px;
+}
+.pannel-item-bottom .warrap-item-bottom{
+	overflow: hidden;
+    padding: 17px 13px;
+}
+.pannel-item-bottom .warrap-item-bottom .item-tag{
+	width: 24%;
+    text-align: left;
+    display: inline-block;
+    font-size: 13px;
+}
+.pannel-item-bottom .warrap-item-bottom .item-tag a{
+	width: 90%;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 4px;
+    white-space: nowrap;
+}
+.pannel-item-top{
+	border-bottom: 1px solid #ededed;
+	margin: 0;
+	height: 230px;
+	overflow: hidden;
+}
+.pannel-item-top .row{
+	margin: 0;
+}
+.contet-block{
+	border: 1px solid #ededed;
+}
+.contet-block .content-block-grid{
+	padding: 20px 0 0 0;
+}
+
+/* End Thinhpm task 2 fix css item category homepage*/
 
 /*Thinhpm css category homepage*/
 .list-group-item{
@@ -349,9 +474,56 @@ a{ color:#000}
 	.navbar-form > .input-group  > div{  padding:0px 3px} 
 	
 }
+@media only screen and (min-width: 992px)  and (max-width: 1199px)  {
+	.contet-block .pannel-item{
+		width: 282px;
+	}
+	.pannel-item-bottom{
+		height: 88px;
+		overflow: hidden;
+	}
+	.pannel-item-bottom .warrap-item-bottom .item-tag a{
+		margin-bottom: 11px;
+	}
+	.pannel-item-bottom .warrap-item-bottom .item-tag{
+		width: 32%;
+	}
+}
 @media only screen and (min-width: 992px)  and (max-width: 1024px)  {
 
 }
+@media only screen and (min-width: 768px)  and (max-width: 991px)  {
+	.p-category-home{
+		min-width: 167px;
+	    height: 288px;
+	}
+	.p-category-home .warrap-category-left a img{
+		width: 117px;
+    	height: 167px;
+	}
+	.p-category-home .warrap-category-left .tagContainer .tag{
+		width: 61px;
+    	height: 23px;
+    	font-size: 11px;
+	}
+	.contet-block .pannel-item{
+		padding-top: 2px;
+    	width: 195px;
+	}
+	.pannel-item-top{
+		height: 193px;
+	}
+	.pannel-item-bottom .warrap-item-bottom{
+		height: 74px;
+	}
+	.warrap-item-top .img-class img{
+		height: 100px;	
+	}
+	.pannel-item-bottom .warrap-item-bottom .item-tag{
+		min-width: 62px;
+	}
+}
+
 @media only screen and (min-width: 768px)  and (max-width: 768px) {
 	.mm-listview, .mm-listview>li{ width:100%;  }
 	
@@ -386,7 +558,34 @@ a{ color:#000}
 		background: #F4F4F4;
 		border-right: 0px solid #AEAEAE;
 		}
-	   
+	
+}
+@media only screen and (max-width: 768px) {
+	.contet-block .pannel-item{
+		display: none;
+	}
+	.p-category-home{
+		width: 100%;
+	}
 }
 
-
+@media only screen and (max-width: 425px) {
+	.contet-block .p-category-home{
+		height: 273px;
+		min-width: unset;
+	}
+	.p-category-home .warrap-category-left a{
+		padding: 2px 0 0 6px;
+	}
+	.p-category-home .warrap-category-left a img{
+	    height: 172px;
+	    width: auto;
+	}
+	.p-category-home .warrap-category-left .tagContainer .tag{
+	    width: 65px;
+        font-size: 10px;
+	}
+	.panel-heading{
+		min-height: 79px;
+	}
+}

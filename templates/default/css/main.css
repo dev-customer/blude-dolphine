@@ -66,6 +66,11 @@ table{ max-width:100% !important; }
 .priceFormat{
 	color:#FF0000 !important;
 }
+.num-buy{
+	float: right;
+	font-size: 13px;
+}
+
 .group-product > .col-md-3 > .site{
 	border-top: 1px solid #eaeaea;
 	border-left: 1px solid #eaeaea;
@@ -507,6 +512,21 @@ a{ color:#000}
 	margin-top: 0 !important;
 	width: 670px;
 }
+/*Thinhpm fix time 1*/
+.main-category-item{
+	margin-bottom: 30px;
+}
+.main-category-item .title-main-category{
+	font-size: 18px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.main-category-item .custom-md-5row{
+
+}
+/*End Thinhpm fix time 1*/
 
 @media only screen and (min-width: 768px) {	
 	.navbar{ min-height:inherit}
@@ -586,11 +606,17 @@ a{ color:#000}
 	.nav>li>a:before, .nav>li>a:after{ width:inherit}
  
 } 
- 
+
+@media only screen and (min-width: 1024px){
+	.main-category-item .custom-md-5row{
+		width: 20%;
+	}
+}
+
 @media only screen and (max-width: 768px) {
 	.hidden-mobile{ display:none}
 	
-	.thumbnail img{ height:inherit !important}
+	/*.thumbnail img{ height:inherit !important}*/
 	.navbar-toggle{ border:0}
 	.navbar-toggle .icon-bar{background-color: #339933 !important;}
 	.mm-vertical{   background-color:#339933 !important}
@@ -612,6 +638,9 @@ a{ color:#000}
 		border-right: 0px solid #AEAEAE;
 		}
 	
+}
+@media only screen and (max-width: 767px) {
+	.thumbnail img{ height:inherit !important}
 }
 @media only screen and (max-width: 768px) {
 	.contet-block .pannel-item{

@@ -67,7 +67,12 @@ class Products extends Module{
 		$url = $url !='' ? $url : LINK_SHOP_ALL;		
 		$data['paging'] = PagingFront::load($getpage, $data['totalRecord'], $rowpage, $curpage, $url);
 
-		$this->view('shop/view/products', $data);	 	
+		$cate = $this->loadObject('SELECT * FROM #__shop_category WHERE alias = "'.$_GET['alias'].'"'); 
+		$cShopSub = getCategoryShop($cate['id_cat'], '', '');  
+		$data['list_category_child'] = $cShopSub;
+		$data['id_main_cat'] = $cate['id_cat'];
+
+		$this->view('shop/view/products', $data);	
 	}
 		    
  

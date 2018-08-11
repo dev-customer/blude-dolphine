@@ -27,8 +27,8 @@ RewriteRule ^category-info/([^/]*).html&page=([^/]*)$ index.php?p=info&q=news&al
 RewriteRule ^detail/([^/]*).html$ index.php?p=info&q=news&m=detail&id=$1 [L]
    
 #module shop
-RewriteRule ^manuafact/([^/]*).html&page=([^/]*)$ index.php?p=shop&q=products&m=index&malias=$1&page=$2 [L]
-RewriteRule ^manuafact/([^/]*).html$ index.php?p=shop&q=products&m=index&malias=$1 [L]
+RewriteRule ^manuafact/([^/]*).html&page=([^/]*)$ index.php?p=shop&q=products&m=brand&malias=$1&page=$2 [L]
+RewriteRule ^manuafact/([^/]*).html$ index.php?p=shop&q=products&m=brand&malias=$1 [L]
 RewriteRule ^category-products/([^/]*).html&page=([^/]*)$ index.php?p=shop&q=products&m=index&alias=$1&page=$2 [L]
 RewriteRule ^category-products/([^/]*).html$ index.php?p=shop&q=products&m=index&alias=$1 [L]
 RewriteRule ^search-products.html&page=([^/]*)$ index.php?p=shop&q=products&m=index&alias=$1&page=$2 [L]

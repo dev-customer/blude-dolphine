@@ -153,7 +153,6 @@ class Module extends Database {
 		$id = $this->id;
 		$this->breadcrumb 	=	'<li><span class="glyphicon glyphicon-home clr-sdt1"></span> <a href="'.BASE_NAME.'">'.MENU_HOME.'</a></li>';
 		switch($p){
-			
 			case 'contact':
 				$this->meta_title= $this->meta_keywords = $this->meta_description = MENU_CONTACT;
 				$this->breadcrumb .= '<li><a href="'.LINK_CONTACT.'">'.MENU_CONTACT.'</a></li>';
@@ -189,7 +188,18 @@ class Module extends Database {
 				break;
 				
 			case 'shop':
-				if($m != 'detail')
+				
+				if( $m === 'brand') {
+					$man = $this->loadObject('SELECT * FROM #__shop_manuafact WHERE alias = "'.$_GET['malias'].'"');  
+					if(!empty($man)){
+						$url = LINK_SHOP_MANUFACT_ITEM.$_GET['malias'].'.html';
+						$brandName = $json->getDataJson1D($man['name'], $_SESSION['dirlang']);
+					} 
+
+					$this->breadcrumb .= '<li><a href="'.$url.'">'.$brandName.'</a></li>';
+				}
+
+				else if($m != 'detail')
 				{
 					$sql = "SELECT *  FROM #__shop_category WHERE alias = '".$_GET['alias']."'";					
 					$row = parent::loadObject($sql);

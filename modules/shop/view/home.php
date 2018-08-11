@@ -19,7 +19,7 @@ global $json, $mod, $cNews, $cShop;
 				if($row1[5]==0):
 					$link1 = LINK_SHOP_LIST.$row1[4].'.html';
 					$title1 = $row1[1];  
-					$cShopSub = getCategoryShop($row1[0], '', '');  
+					$cShopSub = getCategoryShop($row1[0], '', ''); 
 					
 					if(count($cShopSub)>0)
 					{ ?> 
@@ -276,7 +276,7 @@ global $json, $mod, $cNews, $cShop;
 							<div class="warrap-category-left">
 								<a href="<?=$clink?>" target="_blank">
 									<div class="title item item-a-hover"><?=$value[1]?></div>
-									<div class="sub-title item item-a-hover">Size M</div>
+									<div class="sub-title item item-a-hover">Sub title</div>
 									<?=
 									showImg(DIR_UPLOAD.'/shop/'.$value[6], 'shop/'.$value[6], 'no-image.png', '', '', "", "", '', '');
 									?>
@@ -300,27 +300,23 @@ global $json, $mod, $cNews, $cShop;
 								$rows = loadListShop('', $sqlExt, '', 3)['rows']; 
 
 								foreach($rows as $key => $row):   
+									$categoryChild = $cListIDS[$key];
 									$link  = LINK_SHOP_ITEM.$row['alias'].'.html';
+									$linkCategoryChild = LINK_SHOP_LIST.$categoryChild[4].'.html';
 									$title = $json->getDataJson1D($row['title'], $_SESSION['dirlang']);  
 									$price2 = discountPrice($row['price'], $row['discount']);
 									?>
 
-									<!-- here -->
-									
-								<?php	
-								endforeach; 
-								?> 
 									<div class="col-lg-4 col-md-6 col-xs-6 content-block-grid" style="padding-left:5px; padding-right:5px;"> 
-										<!--<span class="glyphicon glyphicon-certificate icoSpec <?=$row['discount'] > 0 ? '' : 'hidden'?> icoSaleOff text-right" title="<?=$row['discount']?>"><label><?=$row['discount']?>%</label></span>-->
 										<div class="clearfix item-product row" style="">
 											<div class="col-xs-12 col-md-12 text-center list-product-home" style="padding:0px;">
 												<div class="warrap-item-top">
-													<a href="<?=$link?>" class="img-class " target="_blank"> 			<div class="title item item-a-hover">Titlte 1</div>
+													<a href="<?=$linkCategoryChild?>" class="img-class " target="_blank">
+														<div class="title item item-a-hover"><?=$title?></div>
 														<div class="sub-title item item-a-hover">Sub title</div>
-														<!-- <?=
-															showImg(DIR_UPLOAD.'/shop/'.$row['image'], 'shop/'.$row['image'], 'no-image.png', '', '', "", "", '', ' style="height:100px;"');
-														?>  -->
-														<img src="https://img.alicdn.com/tfs/TB1NeF.yntYBeNjy1XdXXXXyVXa-210-260.png">
+														<?=
+															showImg(DIR_UPLOAD.'/shop/'.$row['image'], 'shop/'.$row['image'], 'no-image.png', '', '', "", "", '', '"');
+														?>
 													</a>  
 													
 												</div>
@@ -328,40 +324,11 @@ global $json, $mod, $cNews, $cShop;
 											
 										</div>
 									</div>
-									<div class="col-lg-4 col-md-6 col-xs-6 content-block-grid" style="padding-left:5px; padding-right:5px;"> 
-										<!--<span class="glyphicon glyphicon-certificate icoSpec <?=$row['discount'] > 0 ? '' : 'hidden'?> icoSaleOff text-right" title="<?=$row['discount']?>"><label><?=$row['discount']?>%</label></span>-->
-										<div class="clearfix item-product row" style="">
-											<div class="col-xs-12 col-md-12 text-center list-product-home" style="padding:0px;">
-												<div class="warrap-item-top">
-													<a href="<?=$link?>" class="img-class " target="_blank"> 			<div class="title item item-a-hover">Titlte 1</div>
-														<div class="sub-title item item-a-hover">Sub title</div>
-														<!-- <?=
-															showImg(DIR_UPLOAD.'/shop/'.$row['image'], 'shop/'.$row['image'], 'no-image.png', '', '', "", "", '', ' style="height:100px;"');
-														?>  -->
-														<img src="https://img.alicdn.com/tfs/TB15dxkxAyWBuNjy0FpXXassXXa-210-260.png">
-													</a>  
-													
-												</div>
-											</div>
-										</div>
-									</div> 
-									<div class="col-lg-4 col-md-6 col-xs-6 content-block-grid" style="padding-left:5px; padding-right:5px;"> 
-										<!--<span class="glyphicon glyphicon-certificate icoSpec <?=$row['discount'] > 0 ? '' : 'hidden'?> icoSaleOff text-right" title="<?=$row['discount']?>"><label><?=$row['discount']?>%</label></span>-->
-										<div class="clearfix item-product row" style="">
-											<div class="col-xs-12 col-md-12 text-center list-product-home" style="padding:0px;">
-												<div class="warrap-item-top">
-													<a href="<?=$link?>" class="img-class " target="_blank"> 			<div class="title item item-a-hover">Titlte 1</div>
-														<div class="sub-title item item-a-hover">Sub title</div>
-														<?=
-															showImg(DIR_UPLOAD.'/shop/'.$row['image'], 'shop/'.$row['image'], 'no-image.png', '', '', "", "", '', ' style="height:136px;"');
-														?>
-														<!-- <img src="https://img.alicdn.com/tfs/TB1trVyxuuSBuNjy1XcXXcYjFXa-210-260.png"> -->
-													</a>  
-													
-												</div>
-											</div>
-										</div>
-									</div> 
+									
+								<?php	
+								endforeach; 
+								?> 
+									
 							</div>
 
 							<div class="col-xs-12 pannel-item-bottom">

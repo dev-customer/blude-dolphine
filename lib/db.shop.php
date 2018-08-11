@@ -31,7 +31,24 @@ function loadListShop($fieldList='', $sql_ext='', $orderby='', $limit = '') {
 	$sql .= $limit != '' ? " LIMIT $limit" : '';
 	//echo '<noscript>'.$sql.'</noscript>';
 	$info['rows'] = $db->loadObjectList($sql);  
+
 	return !empty($info['rows'])? $info : false;
+}
+
+function getProductsCategory($id_cat){
+	$rowpage = 10;
+	$curpage = CUR_ROWS;
+	$getpage = empty($_GET['page']) ? 1 : $_GET['page']; 
+	$offset = ($getpage - 1) * $rowpage;	
+	$limit = $offset.','.$rowpage;
+	$fieldList = " p.*, c.title AS category";
+	
+	$cListID = getCategoryInfo($id_cat, '', '');
+	$cList 	 = categoryToArray($cListID);
+	$cList[] = $id_cat;
+	$sqlExt .= " AND p.id_cat IN (".implode(',', $cList).")";
+	$data = loadListShop($fieldList, $sqlExt, '', $limit); 
+	return $data['rows'];
 }
 
 function getCategoryShop($catid=0, $split="", $list_style="")

@@ -14,7 +14,7 @@ global $json, $mod, $cNews, $cShop;
 					Khuyến mãi HOT</a></h5>
 				</li>
 				-->
-				<?php 
+				<?php
 				foreach($cShop as $key => $row1):
 				if($row1[5]==0):
 					$link1 = LINK_SHOP_LIST.$row1[4].'.html';
@@ -256,7 +256,6 @@ global $json, $mod, $cNews, $cShop;
 	$rowAds2 = loadListInfo('', $sqlExt2, '', 1)['rows'][0]; 
 	$rowAdsLink2  = LINK_INFO_ITEM.$rowAds2['alias'].'.html';
 	$rowAdsTitle2 = $json->getDataJson1D($rowAds2['title'], $_SESSION['dirlang']);
-	
 	foreach($cShop as $value):
 		if($value[5] == 0 && $value[7] == 1):
 			$cListIDS = getCategoryShop($value[0], '', '');
@@ -276,17 +275,23 @@ global $json, $mod, $cNews, $cShop;
 							<div class="warrap-category-left">
 								<a href="<?=$clink?>" target="_blank">
 									<div class="title item item-a-hover"><?=$value[1]?></div>
-									<div class="sub-title item item-a-hover">Sub title</div>
 									<?=
 									showImg(DIR_UPLOAD.'/shop/'.$value[6], 'shop/'.$value[6], 'no-image.png', '', '', "", "", '', '');
 									?>
-									<div class="tagContainer">
-										<div class="tag">Giày Nam</div>
-										<div class="tag">Thời Trang</div>
-									</div>
-
-								</a>
-								
+                                </a>
+                                <div class="tagContainer">
+                                    <?php
+                                    $i = 0;
+                                    foreach ($cListIDS as $row2) {
+                                        if ($value[0] == $row2[5] && $i < 2){
+                                            $link2 = LINK_SHOP_LIST . $row2[4] . '.html';
+                                            $title2 = $row2[1];
+                                            echo '<div class="tag"><a href="'.$link2.'">'.$row2[1].'</a></div>';
+                                            $i++;
+                                        }
+                                    }
+                                    ?>
+                                </div>
 							</div>
 						</div> 
 						<div class="col-md-8 col-xs-9 content-block-grid pannel-item" style="padding-top:20px;">
@@ -313,7 +318,6 @@ global $json, $mod, $cNews, $cShop;
 												<div class="warrap-item-top">
 													<a href="<?=$linkCategoryChild?>" class="img-class " target="_blank">
 														<div class="title item item-a-hover"><?=$title?></div>
-														<div class="sub-title item item-a-hover">Sub title</div>
 														<?=
 															showImg(DIR_UPLOAD.'/shop/'.$row['image'], 'shop/'.$row['image'], 'no-image.png', '', '', "", "", '', '"');
 														?>
@@ -357,14 +361,18 @@ global $json, $mod, $cNews, $cShop;
 										</p>
 										-->
 										<!-- </div> -->
-									<div class="item-tag"><a class="item-a-hover" href="<?=$clink?>" target="_blank">TAG 1</a></div>
-									<div class="item-tag"><a class="item-a-hover" href="<?=$clink?>" target="_blank">TAG 2</a></div>
-									<div class="item-tag"><a class="item-a-hover" href="<?=$clink?>" target="_blank">TAG 3</a></div>
-									<div class="item-tag"><a class="item-a-hover" href="<?=$clink?>" target="_blank">TAG 4</a></div>
-									<div class="item-tag"><a class="item-a-hover" href="<?=$clink?>" target="_blank">TAG 5</a></div>
-									<div class="item-tag"><a class="item-a-hover" href="<?=$clink?>" target="_blank">TAG 6</a></div>
-									<div class="item-tag"><a class="item-a-hover" href="<?=$clink?>" target="_blank">TAG 7</a></div>
-									<div class="item-tag"><a class="item-a-hover" href="<?=$clink?>" target="_blank">TAG 8</a></div>
+                                    <?php
+                                        if($cListIDS) {
+                                            $i = 1;
+                                            foreach ($cListIDS as $tag)  {
+                                                if($i < 8) {
+                                                echo '<div class="item-tag"><a class="item-a-hover" href="'
+                                                    .LINK_SHOP_LIST.$tag[4].'.html" target="_blank">'.$tag[1].'</a></div>';
+                                                }
+                                                $i++;
+                                            }
+                                        }
+                                    ?>
 								</div>
 							</div>
 						</div>					

@@ -194,12 +194,13 @@ a:focus, a:hover{ color: inherit}
 
 	/*.side-head > div > div:nth-child(1), .side-head > div > div:nth-child(2){ margin-top:20px;}*/
 	
-	.category-home{  position: relative; padding: 15px; background:#FFF; box-shadow: 2px 3px 5px #ddd;}
+	.category-home{  position: relative; padding: 2px 15px 3px; background:#FFF; /*box-shadow: 2px 3px 5px #ddd;*/}
 	.category-home > .list-group-item{padding:3px; border-radius:0}
 	.category-home > .list-group-item > h5{margin:3px auto; text-transform: uppercase; font-size: 13px;}
 	.category-home > .list-group-item > h5 img{ height:20px; width:20px}
-	.category-home > .list-group-item .dropdown-menu{border: 1px solid #ccc; width:678px; height:331px;  margin-left: 1px; overflow: hidden;}
-	.category-home > .list-group-item .dropdown-menu .col-md-3{padding: 5px;}
+	.category-home > .list-group-item .dropdown-menu{border: 1px solid #ccc; width:678px; height:310px;  margin-left:
+            1px; overflow: hidden;}
+	.category-home > .list-group-item .dropdown-menu .col-md-3{padding: 3px 5px;}
 	.category-home > .list-group-item .dropdown-menu .panel-title{color:<?=$mod->config['colorMain1']?>;     min-height: 30px; font-weight:bold; text-transform: uppercase; font-size: 14px; margin-bottom: 5px;}
 	.category-home > .list-group-item .dropdown-menu .list-group-item{ padding: 5px;   padding-left:0;  font-size:12px  }
 	
@@ -395,6 +396,21 @@ endif?>
 					<div id="navbar" class="collapse navbar-collapse">
 						<ul class="nav navbar-nav">
 							<li class=""><a href="./" title="<?=MENU_HOME?>"><span class="glyphicon glyphicon-home hidden"></span> <?=MENU_HOME?></a></li>
+                            <li class="dropdown" class="">
+                                <a class="dropdown-toggle" role="button" aria-haspopup="true"  aria-expanded="false">
+                                    <?=MENU_brand?><span class="caret"></span></a>
+                                <ul class="dropdown-menu bg-sdt1">
+                                <?php
+                                global $json;
+                                $brand = loadListManuafact();
+                                foreach ($brand['rows'] as $value){
+                                    $brandlink = LINK_SHOP_MANUFACT_ITEM.$value['alias'].'.html';
+                                    $brandlname = $json->getDataJson1D($value['name'], $_SESSION['dirlang']);
+                                    echo'<li><a href="'.$brandlink.'">'.$brandlname.'</a></li>';
+                                }
+                                ?>
+                                </ul>
+                            </li>
 							<?php
 							foreach($cNews as $value1):
 								if($value1[3] == 1 && $value1[5] == 69):

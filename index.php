@@ -334,7 +334,7 @@ endif?>
 			<a href="./" title="<?=$json->getDataJson1D($contact['name'], $_SESSION['dirlang'])?>"><img class="logo" src="<?=URL_UPLOAD.$contact['image']?>" alt="logo" title="<?=$json->getDataJson1D($contact['name'], $_SESSION['dirlang'])?>" height="100px;"/></a>
         </div>  
 		<div class="col-md-9"> 
-			<div class="col-md-10" style="padding-top:50px;">
+			<div class="col-md-10 form-search">
 				<form class="navbar-form from-Search" role="search" method="post" action="<?=LINK_SHOP_SEARCH?>" style="margin:inherit; padding-right:0; margin-top:3px">
 					<div class="input-group" style="width:100%">					 
 						<input style="box-shadow:none" class="form-control keyword" name="keyword" placeholder="<?=LB_SEARCH?>..." required />
@@ -357,7 +357,7 @@ endif?>
 					</div>
 				</form>	 	
 			</div>
-			<div class="col-md-2" style="padding-top:50px;">
+			<div class="col-md-2 view-cart">
 				<a href="<?=LINK_SHOP_CART?>"><i style="font-size:25px" class="fa fa-cart-plus clr-sdt2" aria-hidden="true"></i> (<?=count($_SESSION['cart'])?>) GIỎ HÀNG </a>
 			</div> 			
 		</div>
@@ -394,64 +394,64 @@ endif?>
 		
 					<div id="navbar" class="collapse navbar-collapse">
 						<ul class="nav navbar-nav">
-							<li class=""><a href="./" title="<?=MENU_HOME?>"><span class="glyphicon glyphicon-home hidden"></span> <?=MENU_HOME?></a></li> 							
-							<?php   						
-							foreach($cNews as $value1):							 
-								if($value1[3] == 1 && $value1[5] == 69): 
-								
-									$link1 = ($value1[7] != '') ? $value1[7] : LINK_INFO_LIST.$value1[4].'.html'; 
+							<li class=""><a href="./" title="<?=MENU_HOME?>"><span class="glyphicon glyphicon-home hidden"></span> <?=MENU_HOME?></a></li>
+							<?php
+							foreach($cNews as $value1):
+								if($value1[3] == 1 && $value1[5] == 69):
+
+									$link1 = ($value1[7] != '') ? $value1[7] : LINK_INFO_LIST.$value1[4].'.html';
 									$title1 = $value1[1];
-												 
-									$rows = loadListInfo('', " AND c.publish = 1 AND c.id_cat = ".$value1[0])['rows']; 						
+
+									$rows = loadListInfo('', " AND c.publish = 1 AND c.id_cat = ".$value1[0])['rows'];
 									if(count($rows)==1)
-									{	
-										$link1  = ($rows[0]['link'] != '')? $rows[0]['link'] : LINK_INFO_ITEM.$rows[0]['alias'].'.html'; 										 														
+									{
+										$link1  = ($rows[0]['link'] != '')? $rows[0]['link'] : LINK_INFO_ITEM.$rows[0]['alias'].'.html';
 										 echo '<li class=""><a href="'.$link1.'" title=""> '.$title1.'</a></li>';
 									}
 									else
-									{  
-										 
+									{
+
 										$cNews2 = getCategoryInfo($value1[0], '', '');
 										if(count($cNews2)>0)
-										{	?> 
+										{	?>
 											<li class="dropdown">
 												<a class="dropdown-toggle" role="button" aria-haspopup="true"  aria-expanded="false"> <?=$title1?><span class="caret"></span></a>
 												<ul class="dropdown-menu bg-sdt1">
 												<?php
-												foreach($cNews2 as $value2):	
-													if($value2[3] == 1 && $value2[5] == $value1[0]):	
-														$link3  = ($value2[7] != '') ? $value2[7] : LINK_INFO_LIST.$value2[4].'.html';  
+												foreach($cNews2 as $value2):
+													if($value2[3] == 1 && $value2[5] == $value1[0]):
+														$link3  = ($value2[7] != '') ? $value2[7] : LINK_INFO_LIST.$value2[4].'.html';
 														$cNews3 = getCategoryInfo($value2[0], '', '');
-														if(count($cNews3)>0){ 
+														if(count($cNews3)>0){
 														?>
 														<li class="dropdown-submenu">
 															<a class="dropdown-toggle" href="<?=$link3?>"> <?=$value2[1]?></a>
 															<ul class="dropdown-menu bg-sdt1">
 																<?php
-																foreach($cNews3 as $value3):														
-																	$link4  = ($value3[7] != '') ? $value3[7] : LINK_INFO_LIST.$value3[4].'.html';  
+																foreach($cNews3 as $value3):
+																	$link4  = ($value3[7] != '') ? $value3[7] : LINK_INFO_LIST.$value3[4].'.html';
 																	echo '<li><a href="'.$link4.'"> '.$value3[1].'</a></li>';
 																endforeach;
 																?>
 															</ul>
 														</li>
-														<?php	
-														}else 
+														<?php
+														}else
 															echo '<li><a href="'.$link3.'"> '.$value2[1].'</a></li>';
-													endif;	 	 
+													endif;
 												endforeach; ?>
 												</ul>
 											</li>
-											<?php 
+											<?php
 										}
-										else  
-											echo '<li><a class="" href="'.$link1.'" title=""> '.$title1.'</a></li>'; 
+										else
+											echo '<li><a class="" href="'.$link1.'" title=""> '.$title1.'</a></li>';
 									}
-									
+
 								endif;
-							endforeach;  							 
-							?>  		
-							 
+							endforeach;
+							?>
+
 							<li><a href="<?=LINK_CONTACT?>" title="<?=MENU_CONTACT?>"> <?=MENU_CONTACT?></a></li>
 						</ul>
 					</div>

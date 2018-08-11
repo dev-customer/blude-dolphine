@@ -3,6 +3,7 @@ define('LANG_INDEX_TITLE', 'Saigon Tin Tức');
 
 //header
 define('MENU_HOME','Home');
+define('MENU_brand','BRAND');
 define('MENU_SERVICES','Service');
 define('MENU_ABOUT','About Us');
 define('MENU_CONTACT','Contact');

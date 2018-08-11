@@ -688,3 +688,7 @@ a{ color:#000}
 .tagContainer a:hover{
 	color: #000;
 }
+
+.dropdown-menu li a:hover{
+	color: #000;
+}

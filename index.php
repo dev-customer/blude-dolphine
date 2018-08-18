@@ -304,12 +304,15 @@ if($mod->config['facebookAppID'] !=''):?>
 endif?>
 
 <div class="navbar-default navbar-header bg-sdt1 navbar-static-top" style="color:#fff; width:100%">
-	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-		<span class="sr-only">Toggle navigation</span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-	</button>
+                                <a href="/products/mparent.html">
+                                    <img class="btn-home" src="<?php echo TEMPLATE . 'images/btn-home.jpg' ?>" />
+                                </a>
+<!--	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">-->
+<!--		<span class="sr-only">Toggle navigation</span>-->
+<!--		<span class="icon-bar"></span>-->
+<!--		<span class="icon-bar"></span>-->
+<!--		<span class="icon-bar"></span>-->
+<!--	</button>-->
 	<a class="navbar-brand hidden" style="color:#fff" href="#navbar"> MENU</a>
 </div> 
 <!--
@@ -378,11 +381,10 @@ endif?>
 </div>
 
 <div class="container-fluid side-head header">
-	<div class="container">    	 
-
+	<div class="container">
 			<nav id="navbar-main" class="navbar navbar-default navbar-static-top" style="">
 				<div>
-					<!-- Brand and toggle get grouped for better mobile display -->
+
 					<div class="navbar-header">
 						  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
 							<span class="sr-only">Toggle navigation</span>
@@ -391,9 +393,9 @@ endif?>
 							<span class="icon-bar"></span>
 						  </button>
 						<span class="navbar-brand hidden" href="./">
-                            <a href="/products/mparent.html">
-                                <img class="btn-home" src="<?php echo TEMPLATE . 'images/btn-home.jpg' ?>" />
-                            </a>
+<!--                            <a href="/products/mparent.html">-->
+<!--                                <img class="btn-home" src="--><?php //echo TEMPLATE . 'images/btn-home.jpg' ?><!--" />-->
+<!--                            </a>-->
                             <?=MENU_HOME?>
                         </span>
 					</div>
@@ -476,11 +478,11 @@ endif?>
 							<li><a href="<?=LINK_CONTACT?>" title="<?=MENU_CONTACT?>"> <?=MENU_CONTACT?></a></li>
 						</ul>
 					</div>
-					<!-- /.navbar-collapse --> 
 				</div>
-			</nav>   	
+			</nav>
+
 	</div>  
-</div> 
+</div>
 
 <?php
 	if($mod->module ==''){

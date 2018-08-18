@@ -698,9 +698,15 @@ a{ color:#000}
 }
 
 .btn-home {
-	float: left;
-	margin-top: -10px;
-	margin-left: -10px;
-	margin-right: 10px;
-	width: 40px;
+	display: none;
+}
+
+@media only screen and (max-width: 767px) {
+	.btn-home {
+		margin-right: 15px;
+		margin-top: 5px;
+		width: 40px;
+		float: right;
+		display: inline-block;
+	}
 }

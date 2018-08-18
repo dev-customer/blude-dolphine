@@ -390,7 +390,12 @@ endif?>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						  </button>
-						<a class="navbar-brand hidden" href="./"> <?=MENU_HOME?></a>
+						<span class="navbar-brand hidden" href="./">
+                            <a href="/products/mparent.html">
+                                <img class="btn-home" src="<?php echo TEMPLATE . 'images/btn-home.jpg' ?>" />
+                            </a>
+                            <?=MENU_HOME?>
+                        </span>
 					</div>
 		
 					<div id="navbar" class="collapse navbar-collapse">

@@ -692,3 +692,15 @@ a{ color:#000}
 .dropdown-menu li a:hover{
 	color: #000;
 }
+
+.navbar-brand{
+	font-size: 15px;
+}
+
+.btn-home {
+	float: left;
+	margin-top: -10px;
+	margin-left: -10px;
+	margin-right: 10px;
+	width: 40px;
+}

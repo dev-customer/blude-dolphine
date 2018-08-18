@@ -1,0 +1,174 @@
+.side-footer,
+.side-footer-txt,
+.footer,
+.side-breadcrumb,
+.side-head,
+.navbar-header{
+    display: none;
+}
+
+.header {
+    background: #fafafa;
+    padding: 8px 15px 7px 15px;
+    position: relative;
+    height: 50px;
+    border-bottom: 1px solid #e6e6e6;
+    box-shadow:0px 0px 0px #999;
+    margin: 0;
+}
+
+.header .title {
+    line-height: 34px;
+    float: left;
+    font-size: 16px;
+    font-style: normal;
+    padding: 0;
+    margin: 0;
+}
+
+.header .title a{
+    font-size: 16px;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cate-list-page {
+    background: #fff;
+}
+.cate-list-page .c-cont {
+    background: #fff;
+    position: relative;
+    display: flex;
+}
+.cate-list-page .icon {
+    display: block;
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+    background-image: url('../images/icon-cate.png');
+    background-repeat: no-repeat;
+    background-size: 275px 150px;
+}
+.cate-list-page .info {
+    display: block;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1 1 0%;
+    -moz-flex: 1 1 0%;
+    -ms-flex: 1 1 0%;
+    flex: 1 1 0%;
+}
+.cate-list-page .info > h4 {
+    font-size: 15px;
+    color: #4c4c4c;
+    margin-bottom: 5px;
+    line-height: 18px;
+}
+.cate-list-page .info > p {
+    line-height: 18px;
+    font-size: 13px;
+    color: #999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.cate-list-page .second-cate {
+    width: 10em;
+    background-color: #f5f5f5;
+}
+.cate-list-page .second-cate .sub-cate-list {
+    border-bottom: 1px solid #fff;
+}
+.cate-list-page .second-cate .sub-cate-list .info {
+    position: relative;
+    height: 65px;
+    line-height: 65px;
+    padding-left: 15px;
+    border-bottom: 1px solid #e6e6e6;
+    border-top: 1px solid #fff;
+}
+.cate-list-page .second-cate .sub-cate-list .info:first-child {
+    border-top: 0 none;
+}
+.cate-list-page .second-cate .sub-cate-list .info a {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #4c4c4c;
+    font-size: 15px;
+}
+.cate-list-page .second-cate .sub-cate-list .info.active a {
+    color: #ff7300;
+}
+.cate-list-page .second-cate .sub-cate-list .info.active:after {
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    margin-top: -10px;
+    content: "";
+    z-index: 1000;
+    background-image: url('../images/icon-cate.png');
+    background-repeat: no-repeat;
+    background-size: 275px 150px;
+    background-position: -75px -76px;
+}
+.cate-list-page .third-cate {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1 1 0%;
+    -moz-flex: 1 1 0%;
+    -ms-flex: 1 1 0%;
+    flex: 1 1 0%;
+    min-height: 400px;
+    background: #e6e6e6;
+    border-left: 1px solid #d9d9d9;
+}
+.cate-list-page .third-cate .third-cate-list {
+    border-bottom: 1px solid #fff;
+}
+.cate-list-page .third-cate .item {
+    display: block;
+    padding: 10px 15px;
+    height: 45px;
+    border-bottom: 1px solid #d9d9d9;
+    border-top: 1px solid #fff;
+    background: #e6e6e6;
+    color: #666;
+    margin: 0;
+    line-height: 22px;
+    font-size: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.cate-list-page .third-cate .item:first-child {
+    border-top: 0 none;
+}
+.cate-list-page .third-cate .no-cate-list {
+    margin-top: 140px;
+    display: block;
+    line-height: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.loftyui-footer .footer-panel {
+    margin-left: 50px;
+    margin-right: 50px;
+    height: 50px;
+}
+@media screen and (device-width: 320px) and (device-aspect-ratio: 2/3), screen and (device-width: 320px) and (device-aspect-ratio: 40/71) and (-webkit-min-device-pixel-ratio: 2) {
+    .loftyui-footer .footer-panel {
+        height: 43px;
+        margin-left: 44px;
+        margin-right: 44px;
+    }
+}

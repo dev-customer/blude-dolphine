@@ -198,8 +198,8 @@ a:focus, a:hover{ color: inherit}
 	.category-home > .list-group-item{padding:3px; border-radius:0}
 	.category-home > .list-group-item > h5{margin:3px auto; text-transform: uppercase; font-size: 13px;}
 	.category-home > .list-group-item > h5 img{ height:20px; width:20px}
-	.category-home > .list-group-item .dropdown-menu{border: 1px solid #ccc; width:678px; height:310px;  margin-left:
-            1px; overflow: hidden;}
+	.category-home > .list-group-item .dropdown-menu{border: 1px solid #ccc; width:688px; height:310px;  margin-left:
+            -7px; overflow: hidden;}
 	.category-home > .list-group-item .dropdown-menu .col-md-3{padding: 3px 5px;}
 	.category-home > .list-group-item .dropdown-menu .panel-title{color:<?=$mod->config['colorMain1']?>;     min-height: 30px; font-weight:bold; text-transform: uppercase; font-size: 14px; margin-bottom: 5px;}
 	.category-home > .list-group-item .dropdown-menu .list-group-item{ padding: 5px;   padding-left:0;  font-size:12px  }
@@ -477,8 +477,8 @@ endif?>
 	</div>  
 </div> 
 
-<?php  
-	if($mod->module ==''){  
+<?php
+	if($mod->module ==''){
 		$mod->load('shop', 'products', 'home');
 	}else{	?>
 		<div class="container-fluid side-breadcrumb">
@@ -732,18 +732,27 @@ wow.init();
 </div>
 </div>
 -->
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5ad409e2227d3d7edc23f4c8/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
+
+<?php
+if($mod->method !== 'menuParent' && $mod->method !=='menuChild') {
+?>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5ad409e2227d3d7edc23f4c8/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <?php
+}
+?>
 <!--End of Tawk.to Script-->
+
 </body>
 </html>

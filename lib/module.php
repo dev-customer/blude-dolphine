@@ -101,14 +101,26 @@ class Module extends Database {
 		extract($data);
 		ob_start(); 
 		$path = 'modules/'.$filepath.'.php';
-        include($path);                // Include the file
+        include($path);
         $contents = ob_get_contents(); // Get the contents of the buffer
         ob_end_clean();                // End buffering and discard
-        return $contents; 
+        return $contents;
 	}
 
+    function viewPage($filepath, $data=array()){
+        global $db, $mod;
+        extract($data);
+        ob_start();
+        $path = 'modules/'.$filepath.'.php';
+        include($path);
+        $contents = ob_get_contents(); // Get the contents of the buffer
+        ob_end_clean();                // End buffering and discard
+        return $contents;
+    }
 
-	function lang($file, $dir) {
+
+
+    function lang($file, $dir) {
 	
 		if( !empty($_POST['dirlang']) ) {
 			$_SESSION['dirlang'] = $_POST['dirlang'];

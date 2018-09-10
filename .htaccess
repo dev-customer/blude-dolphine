@@ -37,6 +37,7 @@ RewriteRule ^product/([^/]*).html$ index.php?p=shop&q=products&m=detail&id=$1 [L
 RewriteRule ^products/cart.html index.php?p=shop&q=products&m=cart
 RewriteRule ^products/mparent.html index.php?p=shop&q=products&m=menuParent
 RewriteRule ^mchild/([^/]*).html$ index.php?p=shop&q=products&m=menuChild&id=$1 [L]
+RewriteRule ^mmid/([^/]*)/([^/]*).html$ index.php?p=shop&q=products&m=menuMid&pid=$1&id=$2 [L]
 RewriteRule ^products/payment.html index.php?p=shop&q=products&m=payment
 RewriteRule ^products.html&page=([^/]*)$ index.php?p=shop&q=products&page=$1 [L]
 RewriteRule ^products.html index.php?p=shop&q=products

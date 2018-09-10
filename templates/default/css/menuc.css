@@ -85,8 +85,9 @@ ul{
 }
 .cate-list-page .second-cate .sub-cate-list .info {
     position: relative;
-    height: 65px;
-    line-height: 65px;
+    height: auto;
+    line-height: 18px;
+    padding: 20px 0;
     padding-left: 15px;
     border-bottom: 1px solid #e6e6e6;
     border-top: 1px solid #fff;
@@ -95,10 +96,12 @@ ul{
     border-top: 0 none;
 }
 .cate-list-page .second-cate .sub-cate-list .info a {
+    /*
     display: block;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    */
     color: #4c4c4c;
     font-size: 15px;
 }

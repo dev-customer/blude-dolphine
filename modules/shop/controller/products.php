@@ -208,6 +208,12 @@ class Products extends Module
         $data = array();
         $this->view('shop/view/menuChild', $data);
 	}
+
+    function menuMid()
+    {
+        $data = array();
+        $this->view('shop/view/menuMid', $data);
+    }
 	
 }
 ?>	

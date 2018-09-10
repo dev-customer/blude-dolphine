@@ -29,19 +29,25 @@ global $json, $mod, $cShop;
 													?>
 													<div class="col-sm-4 col-md-3 custom-md-5row"> 
 														<div class="site warrap-item" style=" position:relative">
-															<div class="thumbnail">
-																<a href="<?=$link?>" class="site-thumb "> 
-																	<?=
-																	showImg(DIR_UPLOAD.'/shop/'.$row['image'], 'shop/'.$row['image'], 'no-image.png', '', '', "", "", '', '');
-																	?> 
-																</a>  
-															</div> 	
-															<div class="caption text-center">
-																<div class="caption-top"><a class="text-uppercase title-main" href="<?=$link?>"><span class="title"><?=$title?></span></a></div>
-																<div class="caption-bottom">
-																	<span class="priceFormat"><?=$row['price']?></span>
-																	<span class="num-buy">Bán <?=$row['numBuy']?></span>
-																</div> 
+															<div class="row">
+																<div class="col-xs-4 col-sm-12">
+																	<div class="thumbnail">
+																		<a href="<?=$link?>" class="site-thumb "> 
+																			<?=
+																			showImg(DIR_UPLOAD.'/shop/'.$row['image'], 'shop/'.$row['image'], 'no-image.png', '', '', "", "", '', '');
+																			?> 
+																		</a>  
+																	</div> 	
+																</div>
+																<div class="col-xs-8 col-sm-12">
+																	<div class="caption text-center">
+																		<div class="caption-top"><a class="text-uppercase title-main" href="<?=$link?>"><span class="title"><?=$title?></span></a></div>
+																		<div class="caption-bottom">
+																			<span class="priceFormat"><?=$row['price']?></span>
+																			<span class="num-buy">Bán <?=$row['numBuy']?></span>
+																		</div> 
+																	</div>
+																</div>
 															</div>
 														</div>									
 													</div>
@@ -80,33 +86,39 @@ global $json, $mod, $cShop;
 								<div class="col-sm-4 col-md-3 custom-md-5row"> 
 									<div class="site warrap-item" style=" position:relative">
 										<!-- <span class="glyphicon glyphicon-certificate icoSpec <?=$row['discount'] > 0 ? '' : 'hidden'?> icoSaleOff text-right" title="<?=$row['discount']?>"><label><?=$row['discount']?>%</label></span> -->
-										<div class="thumbnail">
-											<a href="<?=$link?>" class="site-thumb "> 
-												<?=
-												showImg(DIR_UPLOAD.'/shop/'.$row['image'], 'shop/'.$row['image'], 'no-image.png', '', '', "", "", '', '');
-												?> 
-											</a>  
-										</div> 	
-										<div class="caption text-center">
-											<div class="caption-top"><a class="text-uppercase title-main" href="<?=$link?>"><span class="title"><?=$title?></span></a></div>
-											<!-- <?php
-											if($row['discount']>0){?>
-												<div>
-													<del class="col-md-6 text-right" style="padding:0"><span class="priceFormat discountPrice"><?=$row['price']?></span></del> 
-													<span class="col-md-6 priceFormat" style="padding:0"><?=$price2?></span>
-												</div> 
-											<?php	
-											}else{?>
-												<div>
-													<span class="priceFormat"><?=$row['price']?></span>
-												</div> 
-											<?php	
-											}
-											?> --> 
-											<div class="caption-bottom">
-												<span class="priceFormat"><?=$row['price']?></span>
-												<span class="num-buy">Bán <?=$row['numBuy']?></span>
-											</div> 
+										<div class="row">
+											<div class="col-xs-4 col-sm-12">
+												<div class="thumbnail">
+													<a href="<?=$link?>" class="site-thumb "> 
+														<?=
+														showImg(DIR_UPLOAD.'/shop/'.$row['image'], 'shop/'.$row['image'], 'no-image.png', '', '', "", "", '', '');
+														?> 
+													</a>  
+												</div> 	
+											</div>
+											<div class="col-xs-8 col-sm-12">
+												<div class="caption text-center">
+													<div class="caption-top"><a class="text-uppercase title-main" href="<?=$link?>"><span class="title"><?=$title?></span></a></div>
+													<!-- <?php
+													if($row['discount']>0){?>
+														<div>
+															<del class="col-md-6 text-right" style="padding:0"><span class="priceFormat discountPrice"><?=$row['price']?></span></del> 
+															<span class="col-md-6 priceFormat" style="padding:0"><?=$price2?></span>
+														</div> 
+													<?php	
+													}else{?>
+														<div>
+															<span class="priceFormat"><?=$row['price']?></span>
+														</div> 
+													<?php	
+													}
+													?> --> 
+													<div class="caption-bottom">
+														<span class="priceFormat"><?=$row['price']?></span>
+														<span class="num-buy">Bán <?=$row['numBuy']?></span>
+													</div> 
+												</div>
+											</div>
 										</div>
 									</div>									
 								</div>

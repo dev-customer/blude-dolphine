@@ -58,7 +58,7 @@ global $json;
 						</tbody>
 					</table> 
 					<div class="panel-body text-center">			   
-						<a href="<?=LINK_SHOP_ALL?>"><span  class="btn bg-sdt1"><i class="fa fa-cart-plus" aria-hidden="true"></i> <?=BTN_SHOP_CONTINUATE?></span></a> 			   			  
+						<a href="/"><span  class="btn bg-sdt1"><i class="fa fa-cart-plus" aria-hidden="true"></i> <?=BTN_SHOP_CONTINUATE?></span></a> 			   			  
 						<a href="<?=LINK_SHOP_CART_PAYMENT?>"><span class="btn bg-sdt1"><i class="fa fa-usd" aria-hidden="true"></i> <?=BTN_SHOP_PAYMENT?></span></a>             			  
 					</div>  
 				<?php

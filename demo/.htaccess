@@ -1,0 +1,53 @@
+RewriteEngine On
+RewriteBase /
+#RewriteBase /
+#custom URL
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-s
+
+#RewriteRule ^(.*)$ index.php?p=$1 [L]
+
+#module user
+RewriteRule ^user/login.html index.php?p=user&q=user&m=login [L]
+RewriteRule ^user/register.html index.php?p=user&q=user&m=register [L]
+RewriteRule ^user/logout.html index.php?p=user&q=user&m=logout [L]
+RewriteRule ^user/account.html index.php?p=user&q=user&m=account [L]
+RewriteRule ^user/reset-pwd.html index.php?p=user&q=user&m=resetPwd [L]
+
+#module global
+RewriteRule ^contact.html index.php?p=contact&q=contact 
+RewriteRule ^tin-tuc.html&page=([^/]*)$ index.php?p=info&q=news&alias=tin-tuc&page=$2 [L]
+RewriteRule ^tin-tuc.html index.php?p=info&q=news&alias=tin-tuc
+RewriteRule ^tim-kiem.html index.php?p=info&q=news
+
+#module info
+RewriteRule ^category-info/([^/]*).html$ index.php?p=info&q=news&alias=$1 [L]
+RewriteRule ^category-info/([^/]*).html&page=([^/]*)$ index.php?p=info&q=news&alias=$1&page=$2 [L]
+RewriteRule ^detail/([^/]*).html$ index.php?p=info&q=news&m=detail&id=$1 [L]
+   
+#module shop
+RewriteRule ^manuafact/([^/]*).html&page=([^/]*)$ index.php?p=shop&q=products&m=brand&malias=$1&page=$2 [L]
+RewriteRule ^manuafact/([^/]*).html$ index.php?p=shop&q=products&m=brand&malias=$1 [L]
+RewriteRule ^category-products/([^/]*).html&page=([^/]*)$ index.php?p=shop&q=products&m=index&alias=$1&page=$2 [L]
+RewriteRule ^category-products/([^/]*).html$ index.php?p=shop&q=products&m=index&alias=$1 [L]
+RewriteRule ^search-products.html&page=([^/]*)$ index.php?p=shop&q=products&m=index&alias=$1&page=$2 [L]
+RewriteRule ^search-products.html index.php?p=shop&q=products&m=index&alias=$1 [L]
+RewriteRule ^product/([^/]*).html$ index.php?p=shop&q=products&m=detail&id=$1 [L]
+RewriteRule ^products/cart.html index.php?p=shop&q=products&m=cart
+RewriteRule ^products/payment.html index.php?p=shop&q=products&m=payment
+RewriteRule ^products.html&page=([^/]*)$ index.php?p=shop&q=products&page=$1 [L]
+RewriteRule ^products.html index.php?p=shop&q=products
+RewriteRule ^sale-off.html&page=([^/]*)$ index.php?p=shop&q=products&m=index&alias=sale-off&page=$2 [L]
+RewriteRule ^sale-off.html$ index.php?p=shop&q=products&m=index&alias=sale-off [L]
+
+ErrorDocument 404 http://localhost/yagomart.com/respond.html
+#ErrorDocument 404 http://hweb.vn/yagomart.com/respond.html
+
+ErrorDocument 401 respond.html
+ErrorDocument 500 respond.html
+
+#RewriteRule ^([^/]*)\.html$ index.php?p=$1 [L]
+
+Options All -Indexes  
+Options All -Indexes  

@@ -96,6 +96,7 @@ $(document).ready(function(){
 										</h4> 
 									<?php	
 									}else{?>
+									<h4>GIÁ : </b></h4>
 										<h3>
 											<span class="priceFormat"><?=$row['price']?></span>
 										</h3> 
@@ -164,7 +165,7 @@ $(document).ready(function(){
 											
 											$size = 'size';											
 											?>
-											<li class="col-md-2 text-uppercase"> 
+											<li class="col-md-3 text-uppercase"> 
 												<input type="radio" name="size" class="reloadSize" value="<?=$value->$size?>" /> <span><?=$value->$size?></span>	
 											</li>                                
 										<?php         

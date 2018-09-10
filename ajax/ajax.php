@@ -180,7 +180,7 @@ function addCartShop()
 			  </div>
 			</div>
 			<div class="row"> 
-				<a href="<?=LINK_SHOP_ALL?>" class="btn"><span class="btn bg-sdt1"><i class="fa fa-cart-plus" aria-hidden="true"></i> <?=BTN_SHOP_CONTINUATE?></span></a>
+				<a href="/" class="btn"><span class="btn bg-sdt1"><i class="fa fa-cart-plus" aria-hidden="true"></i> <?=BTN_SHOP_CONTINUATE?></span></a>
 				<a href="<?=LINK_SHOP_CART_PAYMENT?>" class="btn"><span class="btn bg-sdt1"><i class="fa fa-usd" aria-hidden="true"></i>  <?=BTN_SHOP_PAYMENT?></span></a>            
 			</div>
         </div>           

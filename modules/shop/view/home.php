@@ -81,7 +81,7 @@ global $json, $mod, $cNews, $cShop;
 						$nav .= '<li data-target="#carousel-example-generic1" data-slide-to="'.($key).'" class="'.(($key==0)? 'active':'').'"></li>';				
 						?>
 						<div class="item wow <?=$effArr[$key]?> <?=($key==0)? 'active':''?> sl<?=($key+1)?>" data-wow-duration="1s">
-							<a href="<?=$row['link']?>"><img style="margin:auto;height:310px; width:100%" data-u="image" src="<?=URL_UPLOAD.'/slide/'.$row['image']?>" alt="<?=$title?>" title="<?=$title?>" /></a>
+							<a href="<?=$row['link']?>"><img style="margin:auto;height:490px; width:100%" data-u="image" src="<?=URL_UPLOAD.'/slide/'.$row['image']?>" alt="<?=$title?>" title="<?=$title?>" /></a>
 						</div>				 
 					<?php
 					endforeach; 

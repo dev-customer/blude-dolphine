@@ -1,4 +1,4 @@
-﻿<?php define('DIR_APP', 'TBL'); 
+<?php define('DIR_APP', 'TBL'); 
 if (version_compare(PHP_VERSION, '5.4.0') <= 0) {
     exit('The Website requires PHP version 5.4 or higher.');
 }
@@ -195,11 +195,11 @@ a:focus, a:hover{ color: inherit}
 	/*.side-head > div > div:nth-child(1), .side-head > div > div:nth-child(2){ margin-top:20px;}*/
 	
 	.category-home{  position: relative; padding: 2px 15px 3px; background:#FFF; /*box-shadow: 2px 3px 5px #ddd;*/}
-	.category-home > .list-group-item{padding:3px; border-radius:0}
-	.category-home > .list-group-item > h5{margin:3px auto; text-transform: uppercase; font-size: 13px;}
+	.category-home > .list-group-item{padding:1px 3px; border-radius:0}
+	.category-home > .list-group-item > h5{margin: 3px auto; text-transform: uppercase; font-size: 13px;}
 	.category-home > .list-group-item > h5 img{ height:20px; width:20px}
-	.category-home > .list-group-item .dropdown-menu{border: 1px solid #ccc; width:688px; height:310px;  margin-left:
-            -7px; overflow: hidden;}
+	.category-home > .list-group-item .dropdown-menu{border: 1px solid #ccc; width:695px; height:495px;  margin-left:
+            -10px; overflow: hidden;}
 	.category-home > .list-group-item .dropdown-menu .col-md-3{padding: 3px 5px;}
 	.category-home > .list-group-item .dropdown-menu .panel-title{color:<?=$mod->config['colorMain1']?>;     min-height: 30px; font-weight:bold; text-transform: uppercase; font-size: 14px; margin-bottom: 5px;}
 	.category-home > .list-group-item .dropdown-menu .list-group-item{ padding: 5px;   padding-left:0;  font-size:12px  }
@@ -304,9 +304,9 @@ if($mod->config['facebookAppID'] !=''):?>
 endif?>
 
 <div class="navbar-default navbar-header bg-sdt1 navbar-static-top" style="color:#fff; width:100%">
-                                <a href="/products/mparent.html">
-                                    <img class="btn-home" src="<?php echo TEMPLATE . 'images/btn-home.jpg' ?>" />
-                                </a>
+<!--                                <a href="/products/mparent.html">-->
+<!--                                    <img class="btn-home" src="--><?php //echo TEMPLATE . 'images/btn-home.jpg' ?><!--" />-->
+<!--                                </a>-->
 <!--	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">-->
 <!--		<span class="sr-only">Toggle navigation</span>-->
 <!--		<span class="icon-bar"></span>-->
@@ -393,9 +393,9 @@ endif?>
 							<span class="icon-bar"></span>
 						  </button>
 						<span class="navbar-brand hidden" href="./">
-<!--                            <a href="/products/mparent.html">-->
-<!--                                <img class="btn-home" src="--><?php //echo TEMPLATE . 'images/btn-home.jpg' ?><!--" />-->
-<!--                            </a>-->
+                            <a href="/products/mparent.html">
+                                <img class="btn-home" src="<?php echo TEMPLATE . 'images/btn-home.jpg' ?>" />
+                            </a>
                             <?=MENU_HOME?>
                         </span>
 					</div>
@@ -403,6 +403,7 @@ endif?>
 					<div id="navbar" class="collapse navbar-collapse">
 						<ul class="nav navbar-nav">
 							<li class=""><a href="./" title="<?=MENU_HOME?>"><span class="glyphicon glyphicon-home hidden"></span> <?=MENU_HOME?></a></li>
+							<!--
                             <li class="dropdown" class="">
                                 <a class="dropdown-toggle" role="button" aria-haspopup="true"  aria-expanded="false">
                                     <?=MENU_brand?><span class="caret"></span></a>
@@ -418,7 +419,18 @@ endif?>
                                 ?>
                                 </ul>
                             </li>
+                            -->
+                                <?php
+                                global $json;
+                                $brand = loadListManuafact();
+                                foreach ($brand['rows'] as $value){
+                                    $brandlink = LINK_SHOP_MANUFACT_ITEM.$value['alias'].'.html';
+                                    $brandlname = $json->getDataJson1D($value['name'], $_SESSION['dirlang']);
+                                    echo'<li><a href="'.$brandlink.'">'.$brandlname.'</a></li>';
+                                }
+                                ?>
 							<?php
+							/*
 							foreach($cNews as $value1):
 								if($value1[3] == 1 && $value1[5] == 69):
 
@@ -473,6 +485,7 @@ endif?>
 
 								endif;
 							endforeach;
+							*/
 							?>
 
 							<li><a href="<?=LINK_CONTACT?>" title="<?=MENU_CONTACT?>"> <?=MENU_CONTACT?></a></li>

@@ -713,4 +713,43 @@ a{ color:#000}
 		float: left;
 		display: inline-block;
 	}
+	/*Thinhpm custom css mobile product in page category*/
+	.main-category-item .group-pannel{
+		border: 0;
+	}
+	.main-category-item .group-product > .custom-md-5row{
+		border-bottom: 1px solid;
+    	border-color: rgb(236, 236, 236);
+    	padding: 0;
+	}
+	.main-category-item .row{
+		margin: 0;
+		padding-right: 0;
+		padding-left: 0;
+	}
+	.main-category-item .row > .col-xs-4{
+		padding: 0;
+	    height: 110px;
+        width: 110px;
+	}
+	.main-category-item .row > .col-xs-8{
+		padding: 0 11px;
+		width: calc(100% - 110px);
+	}
+	.main-category-item .row > .col-md-12 {
+		padding: 0;
+	}
+	.main-category-item .group-product .warrap-item > .row{
+		height: 110px;
+	}
+	.main-category-item .group-product .custom-md-5row .thumbnail img{
+	    height: 110px !important;
+	}
+	.group-pannel .group-product .warrap-item{
+		margin: 15px 0;
+	}
+	.group-pannel .group-product .warrap-item .caption-top{
+		min-height: 78px;
+	}
+	/*End Thinhpm custom css mobile product in page category*/
 }

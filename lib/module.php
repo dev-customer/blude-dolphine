@@ -19,6 +19,7 @@ class Module extends Database {
 		$this->module 		=	@$_GET['p'];
 	 	$this->control 		=	@$_GET['q'];
 		$this->method 		=	@$_GET['m'];
+        $this->pid 		    =	@$_GET['pid'];
 		$this->id 			=	@$_GET['id'];
 		$this->page 		=	@$_GET['page'];
 		$this->config  		= 	$this->loadObject("SELECT * FROM #__config ");

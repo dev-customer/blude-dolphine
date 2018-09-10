@@ -1,11 +1,12 @@
 <?php
     global  $mod, $cShop;
+    $pid = $mod->pid;
     $id = $mod->id;
 ?>
 <?php
 $cateP = [];
 foreach ($cShop as $value) {
-    if ($value[5] == $id) {
+    if ($value[5] == $pid) {
         $cateP[] = $value;
     }
 }
@@ -24,8 +25,8 @@ foreach ($cShop as $value) {
                 <?php
                 foreach ($cateP as $keyP => $menuP) {
                 ?>
-                    <li class="<?php echo ($keyP === 0 ? 'active':'') ?> info">
-                        <a href="<?= LINK_MMID . $id . '/' . $menuP[0] . '.html'; ?>">
+                    <li class="<?php echo ($menuP[0] === $id ? 'active':'') ?> info">
+                        <a href="<?=LINK_MMID . $pid . '/' .$menuP[0] . '.html'; ?>">
                             <?php echo $menuP[1] ?>
                         </a>
                     </li>
@@ -38,7 +39,7 @@ foreach ($cShop as $value) {
             <div class="third-cate-list">
 
                 <?php
-                    $cShopSub = getCategoryShop($cateP[0][0]);
+                    $cShopSub = getCategoryShop($id);
                     foreach ($cShopSub as $row2) {
                         $link2  =  LINK_SHOP_LIST.$row2[4].'.html';
                         $title2 = $row2[1];

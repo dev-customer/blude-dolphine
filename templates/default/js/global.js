@@ -38,8 +38,20 @@ $(document).ready(function(e){
 	
 	$('.nav-tabs > li>a').removeClass('bg-sdt1');
 	$('.nav-tabs > li.active>a').addClass('bg-sdt1');
- 
+ 	
+ 	// clear event zoom image product
+ 	clearEventZoomImageProductOnMobile();
 });
+
+function clearEventZoomImageProductOnMobile() {
+	var windowScreen = $(window).width();
+
+	if (windowScreen > 992) {
+		$('#zoom').elevateZoom({scrollZoom : true});
+	} else {
+		$('#zoom').elevateZoom({scrollZoom : false});
+	}
+}
 
 $(document).scroll(function(e){
 	/*

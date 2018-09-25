@@ -48,7 +48,7 @@ $(document).ready(function(){
 									</a>
 									<script>
 										$('#zoom').elevateZoom({
-											scrollZoom : true,
+											scrollZoom : false,
 											zoomWindowFadeIn: 500,
 											zoomWindowFadeOut: 750
 									   }); 
@@ -66,7 +66,7 @@ $(document).ready(function(){
 										</a>
 										<script>
 											$('#zoom').elevateZoom({
-												scrollZoom : true,
+												scrollZoom : false,
 												zoomWindowFadeIn: 500,
 												zoomWindowFadeOut: 750
 										   }); 

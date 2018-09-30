@@ -279,6 +279,96 @@ global $json, $cLocation;
 						
 						</td>
 					</tr>
+                    <tr>
+                        <td>
+                            Nhập giá sĩ
+                        </td>
+                        <td>
+                            <div class="col-md-6">
+                                <div class="panel-heading">
+                                    Giá sĩ:
+                                </div>
+                                <div class="clearfix">
+                                    <table class="table table-bordered table-data-book tblGroupDyn"
+                                           id="tab_logic_soluong" style="width:50%; background:#ddd">
+                                        <thead style="background-color:#ccc;color: #218c8d">
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Số lượng</th>
+                                            <th>Giá</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php
+
+                                        $i=1;
+                                        if(@$row['jsSoluong'] != '')
+                                        {
+                                            $jsSoLuong = json_decode(@$row['jsSoluong']);
+                                            foreach($jsSoLuong as $key => $value):
+                                                $gia = 'gia';
+                                                $soluong = 'soluong';
+                                                ?>
+                                                <tr id='addsoluongr<?=$i?>'>
+                                                    <th scope="row"><?=$i?></th>
+                                                    <td>
+                                                        <input type="text" name="gia<?=$i?>" value="" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="soluong<?=$i?>" value=""/>
+                                                    </td>
+                                                </tr>
+                                                <?php
+                                                $i++;
+                                            endforeach;
+                                        }
+                                        else{?>
+                                            <tr id='addsoluongr1'>
+                                                <th scope="row">1</th>
+                                                <td><input type="text" name="gia1" id="gia1" /></td>
+                                                <td><input type="text" name="soluong1" id="soluong1"/>
+                                                </td>
+                                            </tr>
+                                            <?php
+                                        }
+                                        ?>
+                                        <tr id="addr<?=$i?>"></tr>
+                                        </tbody>
+                                    </table>
+                                    <p class="col-md-6 text-left" style="padding-right: 0;">
+                                        <button type="button" class="btn bg-sdt1" id="add_row_soluong"><span
+                                                    class="glyphicon glyphicon-plus"></span> Add</button>
+                                        <button type="button" class="btn bg-sdt1" id="delete_row_soluong"><span
+                                                    class="glyphicon glyphicon-remove"></span> Remove</button>
+                                        <input type="hidden" name="numberRowDynSoluong" id="numberRowDynSoluong"
+                                               value="<?=$i?>"/>
+                                        <input type="hidden" name="jsSoluong" value="<?=@$row['jsSoluong']?>"/>
+                                    </p>
+                                    <script type="text/javascript">
+                                        $(document).ready(function(){
+                                            var i=<?=$i?>;
+                                            $('body').on('click', '#add_row_soluong', function (e) {
+                                                $('#addsoluongr'+i).html("<th>"+ (i) +"</th><td><input type='text' " +
+                                                    "name='gia"+i+"' id='gia"+i+"' /></td><td><input type='text' " +
+                                                    "name='soluong"+i+"' id='soluong"+i+"' /></td>");
+                                                $('#tab_logic_soluong').append('<tr id="addsoluongr'+(i+1)+'"></tr>');
+                                                i++;
+                                                $('#numberRowDynSoluong').val(i);
+                                            });
+
+                                            $('body').on('click', '#delete_row_soluong', function (e) {
+                                                if(i>1){
+                                                    $("#addsoluongr"+(i-1)).html('');
+                                                    i--;
+                                                    $('#numberRowDynSoluong').val(i);
+                                                }
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
 					 
 					<?php
 					if($mod->config['activeSEO']==1):?>

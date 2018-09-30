@@ -35,7 +35,7 @@ class ModelProducts
 		
 	} 
 			
-	function insert($image, $imageList, $jsColorGroupJS, $jsSizeGroupJS){
+	function insert($image, $imageList, $jsColorGroupJS, $jsSizeGroupJS, $soluongListJS){
 		global $db;	
 		extract($_POST);
 		 	
@@ -50,12 +50,13 @@ class ModelProducts
 		$sql .= !empty($imageList)? ",  imageList = '".$imageList."'" :'';
 		$sql .= !empty($jsColorGroupJS)? ",  jsColorGroup = '".$jsColorGroupJS."'" :'';
 		$sql .= !empty($jsSizeGroupJS)? ",  jsSizeGroup = '".$jsSizeGroupJS."'" :'';
+        $sql .= !empty($soluongListJS)? ", jsSoluong = '".$soluongListJS."'" :'';
 		
 		$res = $db->query($sql);
 		return $res ? true : false;
 	}
 	
-	function update($image, $imageList, $jsColorGroupJS, $jsSizeGroupJS){	
+	function update($image, $imageList, $jsColorGroupJS, $jsSizeGroupJS, $soluongListJS){
 		global $db;	
 		extract($_POST);
 		$alias = Module::Rewrite($title_vn);			
@@ -70,6 +71,7 @@ class ModelProducts
 		$sql .= !empty($imageList)?  ", imageList = '".$imageList."'" : '';
 		$sql .= !empty($jsColorGroupJS)? ",  jsColorGroup = '".$jsColorGroupJS."'" :'';
 		$sql .= !empty($jsSizeGroupJS)? ",  jsSizeGroup = '".$jsSizeGroupJS."'" :'';
+        $sql .= !empty($soluongListJS)? ",  jsSoluong = '".$soluongListJS."'" :'';
 
 		$sql .= " WHERE id_product = ".$id_product; 
 		

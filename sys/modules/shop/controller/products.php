@@ -215,13 +215,32 @@ class Products extends Module {
 					if(!empty($sizeList))
 					{
 						$sizeListJS = json_encode($sizeList); 
-					} 
+					}
 
-					$model = new ModelProducts();
+
+                    //Soluong
+                    $soluongList = array();
+                    if($numberRowDynSoluong >= 1)
+                    {
+                        for($i=1; $i < $numberRowDynSoluong; $i++ ):
+                            $soluongList[]  = array(
+                                    'soluong'  => $_POST['soluong'.$i],
+                                    'gia'  => $_POST['gia'.$i],
+                            );
+                        endfor;
+                    }
+
+                    if(!empty($soluongList))
+                    {
+                        $soluongListJS = json_encode($soluongList);
+                    }
+
+
+                    $model = new ModelProducts();
 
 					if($method == 'add')
 					{ 	
-						if($model->insert($image_name, $imageListJS, $colorListJS, $sizeListJS) ) 
+						if($model->insert($image_name, $imageListJS, $colorListJS, $sizeListJS, $soluongListJS) )
 							$_SESSION['message'] = LANG_UPDATE_SUCCESS;
 						else{
 							$_SESSION['message'] = LANG_UPDATE_FAILED; 							
@@ -229,7 +248,7 @@ class Products extends Module {
 						}
 					}else if($method == 'edit')
 					{ 	
-						if($model->update($image_name, $imageListJS, $colorListJS, $sizeListJS) ) 
+						if($model->update($image_name, $imageListJS, $colorListJS, $sizeListJS, $soluongListJS) )
 							$_SESSION['message'] = LANG_UPDATE_SUCCESS;
 						else{
 							$_SESSION['message'] = LANG_UPDATE_FAILED; 							

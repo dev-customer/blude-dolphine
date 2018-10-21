@@ -84,8 +84,47 @@ $(document).ready(function(){
 									<div class="fb-like" data-href="<?=$mod->curPageURL()?>" data-layout="standard" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>								
 								</li>
 							</ul>
-							<div class="col-md-8">
-								<li class="list-group-item">
+							<div class="col-md-12">
+                                <li class="list-group-item row">
+                                    <div class="clearfix" style="background: #249EC5; color: #fff;font-weight: 600;
+                                    padding:10px; opacity: 0.8">
+                                    <?php
+                                        if($row['jsSoluong'] !=''){
+                                            $jsSoluong = json_decode($row['jsSoluong']);
+                                            $count = count($jsSoluong);
+                                            $col = 12 / $count;
+                                            echo'<div class="col-md-2">';
+                                                echo'<div class="row">';
+                                                    echo'<div style="padding:10px 5px;font-size: 25px">Giá</div>';
+                                                    echo'<div style="padding:10px 5px">Lô</div>';
+                                                echo'</div>';
+                                            echo'</div>';
+                                            echo'<div class="col-md-10">';
+                                                foreach($jsSoluong as $key => $value){
+                                                    $gia = 'gia';
+                                                    $soluong = 'soluong';
+                                                    ?>
+
+                                                    <div class="col-md-<?php echo $col; ?> col-sm-12 col-xs-12">
+                                                        <div class="row">
+                                                            <div class="priceFormat" style="padding:10px 5px; font-size: 25px;color:
+                                                            #fff !important;">
+                                                                <?php echo $value->$gia; ?>
+                                                            </div>
+                                                            <div style="padding:10px 5px"><?php echo  $value->$soluong; ?></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <?php
+                                                }
+                                            echo'</div>';
+
+                                        }
+                                    ?>
+                                    </div>
+                                </li>
+
+								<li class="list-group-item row">
 									<?php
 									if($row['discount']>0){?>
 										<h4 class="clearfix">
@@ -121,14 +160,7 @@ $(document).ready(function(){
 											
 											$imgUrl = is_file(DIR_UPLOAD.'/shop/'.$value->$image)? URL_UPLOAD.'shop/'.$value->$image : URL_UPLOAD.'no-image.png';?>
 											<li class="col-md-3"> 
-																								<div class=""><img class="pointer reloadImg img-rouned" data-option="<?=$value->$color?>" src="<?=$imgUrl?>" /> </div>
-												
-
-												<!--
-												<div class="pointer reloadImg img-rouned text-center" data-option="<?=$value->$color?>"  style="background-color: <?=$value->$color?>; width:40px; height:40px">
-													<input type="radio" name="color" class="reloadColor" />	
-												</div>
-												-->
+											    <div class=""><img class="pointer reloadImg img-rouned" data-option="<?=$value->$color?>" src="<?=$imgUrl?>" /> </div>
 											</li>                                
 										<?php         
 										endforeach;
@@ -156,7 +188,7 @@ $(document).ready(function(){
 								<?php
 								if($row['jsSizeGroup'] !=''):
 								?>
-								<li class="list-group-item clearfix">
+								<li class="list-group-item row clearfix">
 									<span>Size</span>
 									<ul class="list-inline sizeSelect bg-info">                       
 										<?php
@@ -184,31 +216,24 @@ $(document).ready(function(){
 								<?php
 								endif;
 								?>
-								<li class="list-group-item">
+								<li class="list-group-item row">
 										<span>Số lượng </span>
-									<div class="input-group col-md-4">
+									<div class="input-group col-md-6">
 										<div class="input-group-addon"><i class="pointer  fa fa-minus"></i></div>
 										<input class="form-control" name="number" id="number" min="1" max="50" placeholder="Số lượng"  value="1"/> 
 										<div class="input-group-addon"><i class="pointer  fa fa-plus"></i></div>
 									</div>
 								</li>
-								<li class="list-group-item text-uppercase">   
-									<div class="col-md-6"><a class="btn bg-sdt1 btn-addcart btn-addcart<?=$row['id_product']?>" data-color="" data-size="" data-id="<?=$row['id_product']?>" style="width: 100%;"><h4><span class="glyphicon glyphicon-shopping-cart" title=""></span><?=BTN_ADDCARD2?></h4></a></div>
+								<li class="list-group-item text-uppercase row">
+									<div class="col-md-6">
+                                        <div class="row">
+                                        <a class="btn bg-sdt1 btn-addcart btn-addcart<?=$row['id_product']?>" data-color="" data-size="" data-id="<?=$row['id_product']?>" style="width: 100%;">
+                                            <h4><span class="glyphicon glyphicon-shopping-cart" title=""></span><?=BTN_ADDCARD2?></h4>
+                                        </a>
+                                        </div>
+                                    </div>
 								</li>
 							</div>
-							<div class="col-md-4">
-								<div class="panel" style="background-color: #f2f2f2; padding: 5px 15px;color: #212121;">
-									<span style="padding: 10px 0px;"><i style="margin-top: 5px" class="fa fa-phone"></i> Liên hệ : <br /><?=filter_var($contact['tel'], FILTER_SANITIZE_NUMBER_INT)?></span>
-									<span style="padding: 10px 0px;"><i style="margin-top: 5px" class="fa fa-asterisk"></i> Được bán bởi : <br /> <a href="<?=$mlink?>" class="clr-sdt1"><?=$mtitle?></a></span>
-								</div>
-								<div class="panel bg-info">
-									<div class="panel-body">
-										<?=$row['summary_'.$_SESSION['dirlang']]?>
-									</div>
-								</div>
-							
-							</div> 
-							
 						</div>  
 				</div>
 			</div>

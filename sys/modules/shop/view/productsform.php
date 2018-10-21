@@ -294,8 +294,8 @@ global $json, $cLocation;
                                         <thead style="background-color:#ccc;color: #218c8d">
                                         <tr>
                                             <th>#</th>
-                                            <th>Số lượng</th>
                                             <th>Giá</th>
+                                            <th>Số lượng</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -312,10 +312,12 @@ global $json, $cLocation;
                                                 <tr id='addsoluongr<?=$i?>'>
                                                     <th scope="row"><?=$i?></th>
                                                     <td>
-                                                        <input type="text" name="gia<?=$i?>" value="" />
+                                                        <input type="text" name="gia<?=$i?>" value="<?php
+                                                        echo $value->$gia; ?>" />
                                                     </td>
                                                     <td>
-                                                        <input type="text" name="soluong<?=$i?>" value=""/>
+                                                        <input type="text" name="soluong<?=$i?>" value="<?php
+                                                        echo $value->$soluong; ?>"/>
                                                     </td>
                                                 </tr>
                                                 <?php

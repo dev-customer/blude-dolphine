@@ -424,6 +424,9 @@ endif?>
                                 global $json;
                                 $brand = loadListManuafact();
                                 foreach ($brand['rows'] as $value){
+                                    if ($value['publish'] == 0) {
+                                        continue;
+                                    }
                                     $brandlink = LINK_SHOP_MANUFACT_ITEM.$value['alias'].'.html';
                                     $brandlname = $json->getDataJson1D($value['name'], $_SESSION['dirlang']);
                                     echo'<li><a href="'.$brandlink.'">'.$brandlname.'</a></li>';

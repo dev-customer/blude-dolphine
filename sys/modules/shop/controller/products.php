@@ -224,8 +224,8 @@ class Products extends Module {
                     {
                         for($i=1; $i < $numberRowDynSoluong; $i++ ):
                             $soluongList[]  = array(
-                                    'soluong'  => $_POST['soluong'.$i],
                                     'gia'  => $_POST['gia'.$i],
+                                    'soluong'  => $_POST['soluong'.$i]
                             );
                         endfor;
                     }

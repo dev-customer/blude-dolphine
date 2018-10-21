@@ -87,11 +87,66 @@ $(document).ready(function() {
 												</thead>
 												<tbody> 
 													<?php
+
+                                                    function maxFind($arr) {
+                                                        if (is_array($arr)) {
+                                                            $max = 0;
+                                                            foreach ($arr as $value) {
+                                                                if ($value > $max) {
+                                                                    $max = $value;
+                                                                }
+                                                            }
+                                                        }
+                                                        return $max;
+                                                    }
+
+                                                    function sosanh($sl, $arr) {
+                                                        $data = array();
+                                                        if (is_array($arr)) {
+                                                            foreach ($arr as $key => $value) {
+                                                                if ($sl <= $key) {
+                                                                    $data[$sl] =  $value;
+                                                                    break;
+                                                                }
+                                                            }
+                                                        }
+
+                                                        return $data;
+                                                    }
+
+                                                    function subTotal($arr) {
+                                                        foreach ($arr as $key => $value) {
+                                                            return $key * $value;
+                                                        }
+                                                    }
+
+                                                    function showGia($arr) {
+                                                        foreach ($arr as $key => $value) {
+                                                            return $value;
+                                                        }
+                                                    }
+
 													$total = 0;	
-													foreach($data['rows'] as $row):										
+													foreach($data['rows'] as $row):
+
+                                                        $jsSoluong = json_decode($row['jsSoluong']);
+                                                        $soluong = array();
+                                                        if ($jsSoluong) {
+                                                            foreach ($jsSoluong as $value) {
+                                                                $sl = explode('-', $value->soluong);
+                                                                $max = maxFind($sl);
+                                                                $soluong[$max] = $value->gia;
+                                                            }
+                                                        }
+
+                                                        $slGia = sosanh($_SESSION['cart'][$row['id_product']]['number'], $soluong);
+                                                        $subTotal  = subTotal($slGia);
+
+                                                        /*
 														$rprice = $row['discount'] > 0 ? discountPrice($row['price'], $row['discount']) : $row['price'];
 														$subTotal = $_SESSION['cart'][$row['id_product']]['number'] * $rprice;
-														
+														*/
+
 														$total += $subTotal;
 														$link= LINK_SHOP_ITEM.$row['alias'].'.html';
 														$title = $json->getDataJson1D($row['title'], $_SESSION['dirlang']);											

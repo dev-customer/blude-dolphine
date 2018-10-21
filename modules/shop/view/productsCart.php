@@ -7,6 +7,45 @@ global $json;
 			<div class="col-sm-12 col-md-12"> 
 				<div class="panel panel-default"> 
 				<?php
+
+                function maxFind($arr) {
+                    if (is_array($arr)) {
+                        $max = 0;
+                        foreach ($arr as $value) {
+                            if ($value > $max) {
+                                $max = $value;
+                            }
+                        }
+                    }
+                    return $max;
+                }
+
+                function sosanh($sl, $arr) {
+                    $data = array();
+                    if (is_array($arr)) {
+                        foreach ($arr as $key => $value) {
+                            if ($sl <= $key) {
+                                $data[$sl] =  $value;
+                                break;
+                            }
+                        }
+                    }
+
+                    return $data;
+                }
+
+                function subTotal($arr) {
+                    foreach ($arr as $key => $value) {
+                        return $key * $value;
+                    }
+                }
+
+                function showGia($arr) {
+                    foreach ($arr as $key => $value) {
+                        return $value;
+                    }
+                }
+
 				if(@$rows)
 				{
 				?> 
@@ -25,10 +64,24 @@ global $json;
 							<?php
 							$total = 0;	
 							foreach($data['rows'] as $row):
-								$rprice = $row['discount'] > 0 ? discountPrice($row['price'], $row['discount']) : $row['price'];
-								$subTotal = $_SESSION['cart'][$row['id_product']]['number'] * $rprice;
-							
-								$total += $subTotal;
+                                $jsSoluong = json_decode($row['jsSoluong']);
+                                $soluong = array();
+                                if ($jsSoluong) {
+                                    foreach ($jsSoluong as $value) {
+                                        $sl = explode('-', $value->soluong);
+                                        $max = maxFind($sl);
+                                        $soluong[$max] = $value->gia;
+                                    }
+                                }
+
+                                $slGia = sosanh($_SESSION['cart'][$row['id_product']]['number'], $soluong);
+                                //$rprice = $row['discount'] > 0 ? discountPrice($row['price'], $row['discount']) :
+                                // $row['price'];
+                                //$subTotal = $_SESSION['cart'][$row['id_product']]['number'] * $rprice;
+
+                                $subTotal  = subTotal($slGia);
+
+                                $total += $subTotal;
 								$link= BASE_NAME.'product/'.$row['alias'].'.html';
 								$title = $json->getDataJson1D($row['title'], $_SESSION['dirlang']); 
 								?>
@@ -39,16 +92,23 @@ global $json;
 									?>					  
 									</td>
 									<td><a href="<?=$link?>"><?=$title?></a> </td>
-									<td class="">
-										<?php
-										if($row['discount']>0){?>
-											<span class="priceFormat"><?=$rprice?></span> - <del><span class="priceFormat discountPrice" style=""><?=$row['price']?></span></del>											
-										<?php
-										}else{?>
-											<span class="priceFormat"><?=$rprice?></span>											
-										<?php
-										}?> 
-									</td>
+                                    <td>
+                                        <span class="priceFormat">
+                                        <?php
+                                            echo showGia($slGia);
+                                        ?>
+                                        </span>
+                                    </td>
+<!--									<td class="">-->
+<!--										--><?php
+//										if($row['discount']>0){?>
+<!--											<span class="priceFormat">--><?//=$rprice?><!--</span> - <del><span class="priceFormat discountPrice" style="">--><?//=$row['price']?><!--</span></del>											-->
+<!--										--><?php
+//										}else{?>
+<!--											<span class="priceFormat">--><?//=$rprice?><!--</span>											-->
+<!--										--><?php
+//										}?><!-- -->
+<!--									</td>-->
 									<td> <?=$_SESSION['cart'][$row['id_product']]['number']?> </td>
 									<td class="priceFormat txtPrice"><?=$subTotal?></td>
 									<td><p class="pointer fa fa-remove delete-cart clr-sdt2" data-id="<?=$row['id_product']?>" title="Delete"></p></td>

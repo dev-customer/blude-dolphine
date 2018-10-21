@@ -82,6 +82,7 @@ $(document).ready(function() {
 												<thead>
 													<th>Image</th>
 													<th>SP</th>
+                                                    <th>Số lượng</th>
 													<th>Giá</th>
 													<th>Tổng</th>
 												</thead>
@@ -154,16 +155,16 @@ $(document).ready(function() {
 															<tr>
 																<td><?= showImg(DIR_UPLOAD.'/shop/'.$row['image'], 'shop/'.$row['image'], 'no-image.png', '', 30, "", "", '', ''); ?></td>
 																<td><span><?=$title?></span>
-																	<div>
-																		<?php
-																		if($row['discount']>0){?>
-																			<span class="priceFormat"><?=$rprice?></span> - <del><span class="priceFormat discountPrice" style=""><?=$row['price']?></span></del>											
-																		<?php
-																		}else{?>
-																			<span class="priceFormat"><?=$rprice?></span>											
-																		<?php
-																		}?>
-																	</div>
+<!--																	<div>-->
+<!--																		--><?php
+//																		if($row['discount']>0){?>
+<!--																			<span class="priceFormat">--><?//=$rprice?><!--</span> - <del><span class="priceFormat discountPrice" style="">--><?//=$row['price']?><!--</span></del>											-->
+<!--																		--><?php
+//																		}else{?>
+<!--																			<span class="priceFormat">--><?//=$rprice?><!--</span>											-->
+<!--																		--><?php
+//																		}?>
+<!--																	</div>-->
 																	<?php
 																	if($_SESSION['cart'][$row['id_product']]['color'] != ''):?>
 																		<p>Color: <span class="badge" style="background:<?=$_SESSION['cart'][$row['id_product']]['color']?>">color</span></p>																	
@@ -180,12 +181,19 @@ $(document).ready(function() {
 																	
 																</td>
 																<td><?=$_SESSION['cart'][$row['id_product']]['number']?></td>
+                                                                <td>
+                                                                    <span class="priceFormat">
+                                                                        <?php
+                                                                        echo showGia($slGia);
+                                                                        ?>
+                                                                    </span>
+                                                                </td>
 																<td><h6 class="priceFormat txtPrice"><?=$subTotal?></h6></td>
 															</tr>				 										
 														<?php
 													endforeach;	?> 
 													<tr>
-														<td colspan="4" class="text-right"> 
+														<td colspan="5" class="text-right">
 															<div>Total: <span class="priceFormat txtPrice"><?=$total?></span></div>
 														</td>
 													</tr>	 

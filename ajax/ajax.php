@@ -138,9 +138,26 @@ function addCartShop()
 				<tbody>
 					<?php
 					$total = 0;	
-					foreach($data['rows'] as $row): 
+					foreach($data['rows'] as $row):
+
+                        $jsSoluong = json_decode($row['jsSoluong']);
+                        $soluong = array();
+                        if ($jsSoluong) {
+                            foreach ($jsSoluong as $value) {
+                                $sl = explode('-', $value->soluong);
+                                $max = maxFind($sl);
+                                $soluong[$max] = $value->gia;
+                            }
+                        }
+
+                        $slGia = sosanh($_SESSION['cart'][$row['id_product']]['number'], $soluong);
+                        $subTotal  = subTotal($slGia);
+
+                        /*
 						$rprice = $row['discount'] > 0 ? discountPrice($row['price'], $row['discount']) : $row['price'];
 						$subTotal = $_SESSION['cart'][$row['id_product']]['number'] * $rprice;
+						*/
+
 						$total += $subTotal;
 						$link= BASE_NAME.'product/'.$row['alias'].'.html';
 						$title = $json->getDataJson1D($row['title'], $_SESSION['dirlang']); 
@@ -152,14 +169,19 @@ function addCartShop()
 							</td>
 							<td><a href="<?=$link?>"><?=$title?></a></td>
 							<td>
-								<?php
-								if($row['discount']>0){?>
-									<span class="priceFormat"><?=$rprice?></span> - <del><span class="priceFormat discountPrice" style=""><?=$row['price']?></span></del>											
-								<?php
-								}else{?>
-									<span class="priceFormat"><?=$rprice?></span>											
-								<?php
-								}?>
+<!--								--><?php
+//								if($row['discount']>0){?>
+<!--									<span class="priceFormat">--><?//=$rprice?><!--</span> - <del><span class="priceFormat discountPrice" style="">--><?//=$row['price']?><!--</span></del>											-->
+<!--								--><?php
+//								}else{?>
+<!--									<span class="priceFormat">--><?//=$rprice?><!--</span>											-->
+<!--								--><?php
+//								}?>
+                                <span class="priceFormat">
+                                <?php
+                                    echo showGia($slGia);
+                                ?>
+                                </span>
 							</td>
 							<td>
 								<input type="number" name="numberPopup" data-id="<?=$row['id_product']?>" min="1" max="50" class="numberPopup form-control" placeholder="" value="<?=$_SESSION['cart'][$row['id_product']]['number']?>"/> 
@@ -224,6 +246,45 @@ function updateCartShop(){
 		echo $subTotalTxt.'#'.$total;
 	}
 }
+
+function maxFind($arr) {
+    if (is_array($arr)) {
+        $max = 0;
+        foreach ($arr as $value) {
+            if ($value > $max) {
+                $max = $value;
+            }
+        }
+    }
+    return $max;
+}
+
+function sosanh($sl, $arr) {
+    $data = array();
+    if (is_array($arr)) {
+        foreach ($arr as $key => $value) {
+            if ($sl <= $key) {
+                $data[$sl] =  $value;
+                break;
+            }
+        }
+    }
+
+    return $data;
+}
+
+function subTotal($arr) {
+    foreach ($arr as $key => $value) {
+        return $key * $value;
+    }
+}
+
+function showGia($arr) {
+    foreach ($arr as $key => $value) {
+        return $value;
+    }
+}
+
 
 
 ?>
